@@ -32,6 +32,8 @@ layout: default
         <a class="btn btn-sm btn-primary" href="{{ post.url }}#read-more" role="button">Read more <i class="fa fa-arrow-circle-right"></i></a>
       </p>
       {% endif %}
+
+      <a href="{{ post.url }}#disqus_thread">Comments</a>
     </section>
     <section class="post-meta">
       <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
@@ -98,3 +100,4 @@ layout: default
 
 </div>
 </div>
+<script id="dsq-count-scr" src="//ryanguill.disqus.com/count.js" async></script>
