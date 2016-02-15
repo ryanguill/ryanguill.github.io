@@ -7,7 +7,7 @@ categories: CFML
 tags: CFML
 ---
 
-A friend asked recently how I would go about writing a function to do fuzzy time - something that formats time in a general way, the way you would talk about it in conversation - "just now", "a few minutes ago", "2 days ago", etc.  He wanted it to be customizable, where they could define the groupings used.  This is what we came up with:
+A friend asked recently how I would go about writing a function to do fuzzy time - something that formats time in a casual way, the way you would talk about it in conversation - "just now", "a few minutes ago", "2 days ago", etc.  He wanted it to be customizable, where they could define the groupings used.  This is what we came up with:
 <!-- break -->
 
 {% highlight cfm %}
