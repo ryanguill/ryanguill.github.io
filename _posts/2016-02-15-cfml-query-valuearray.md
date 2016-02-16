@@ -23,3 +23,5 @@ function valueArray (required query q, required string column) {
 This requires dropping down into java reflection territory, but the benefit is that it actually adds things to the array directly, value by value. This means that everything works no matter what the value is - commas in the values are problematic for using `valueList()` and then something like `listToArray()`.
 
 You can see it in action [on trycf](http://trycf.com/gist/45481a49c17e95872523).
+
+**2015-02-16 Update:** this just in, [ACF 2016 has added `valueArray()`](https://helpx.adobe.com/coldfusion/cfml-reference/coldfusion-functions/functions-t-z/valuearray.html#main-pars_header) - with the same signature and everything.  This function will still be useful for earlier versions though.
