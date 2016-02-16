@@ -17,3 +17,5 @@ For most sites you want to get the benefits of a CDN, but it is still a single p
 {% endhighlight %}
 
 Something I hope to explore more very soon is webpack, which might make this trick obsolete.
+
+Update: It took me a while to find where I had originally found this idea, but I came across it again.  Credit: [http://minime.stephan-brumme.com/](http://minime.stephan-brumme.com/). They also have examples for several other popular client-side js libraries.
