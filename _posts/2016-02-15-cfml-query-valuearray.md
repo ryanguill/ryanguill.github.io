@@ -7,7 +7,7 @@ categories: CFML
 tags: CFML
 ---
 
-Occasionally in the [CFML Slack channel](http://cfml-slack.herokuapp.com/) (and the IRC room before it) someone asks about a [`valueArray()`](http://cfdocs.org/valuearray) function - what they really mean is that they want something like the terribly named [`valueList()`](http://cfdocs.org/valuelist) that you can provide a query and a column and get a column slice but something that returns an array instead of a CFML list.  `valueArray()` [exists on Lucee](http://docs.lucee.org/reference/functions/valuearray.html) but for ACF you're stuck implementing it for yourself.  Here is a way to do that properly (it's easy to do it naively wrong).
+Occasionally in the [CFML Slack channel](http://cfml-slack.herokuapp.com/) (and the IRC room before it) someone asks about a [`valueArray()`](http://cfdocs.org/valuearray) function - what they mean is that they want something like the terribly named [`valueList()`](http://cfdocs.org/valuelist) that you can provide a query and a column and get a column slice which will return an array instead of a CFML list.  `valueArray()` [exists on Lucee](http://docs.lucee.org/reference/functions/valuearray.html) but for ACF you're stuck implementing it for yourself.  Here is a way to do that properly (it's easy to do it naively wrong).
 
 <!-- break -->
 
