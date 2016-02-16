@@ -19,7 +19,7 @@ description: >
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://ryanguill.github.io" # the base hostname & protocol for your site
 cover: "/assets/blog-header-cuttlefish.jpg"
-logo: "/assets/r.png"
+logo: "/assets/cuttlefish-icon-edit.png"
 
 # Build settings
 markdown: kramdown
