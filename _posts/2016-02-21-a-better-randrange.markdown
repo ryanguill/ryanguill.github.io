@@ -7,7 +7,7 @@ categories: CFML math
 tags: CFML math randrange
 ---
 
-Every CFML engine I can get a hold of - Adobe ColdFusion 10, 11 and 2016, Lucee 4.5 and 5 - has a bug where if you try to use `randRange()` on 2<sup>31</sup> - 1 (`MAX_INT`) it will overflow and give you a negative number.  See for yourself: [http://trycf.com/gist/726e96e5c5e9498b32a2/acf2016](http://trycf.com/gist/726e96e5c5e9498b32a2/acf2016).  Here is a better way that supports not only `MAX_INT` but also `MAX_LONG` (2<sup>63</sup>-1).
+Every CFML engine I can find - Adobe ColdFusion 10, 11 and 2016, Lucee 4.5 and 5 - has a bug where if you try to use `randRange()` on 2<sup>31</sup>-1 (`MAX_INT`) it will overflow and give you a negative number.  See for yourself: [http://trycf.com/gist/726e96e5c5e9498b32a2/acf2016](http://trycf.com/gist/726e96e5c5e9498b32a2/acf2016).  Here is a better way that supports not only `MAX_INT` but also `MAX_LONG` (2<sup>63</sup>-1).
 <!-- break -->
 
 {% highlight text %}
