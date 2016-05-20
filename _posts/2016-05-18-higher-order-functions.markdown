@@ -5,6 +5,7 @@ date:   2016-05-18 12:00:00
 author: Ryan Guill
 categories: functional higher-order-functions
 tags:	functional higher-order-functions map-reduce
+cover:  "/assets/js_code.jpg"
 ---
 
 There are few things I have learned in my programming career that have paid off like higher order functions.  `Map`, `Reduce` and `Filter` with their cousins, along with the concept of passing functions as data in general make code easier to reason about, easier to write, easier to test.  I find myself evangelizing these concepts often, so I thought I would try to do my best to give an introduction of them, along with some real world examples of how they can improve your everyday programming life.  These examples are in JavaScript, but the concepts are universal.
