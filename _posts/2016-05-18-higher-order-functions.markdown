@@ -33,7 +33,7 @@ Higher Order Functions do not _require_ you to use pure functions, but that is w
 
 ## Map
 
-Map is one of the easiest to grok, so let's start there.  Let's say I have a collection of data, and I need to perform some sort of transformation on it. Common examples might be taking complex data and formatting it for output, or plucking individual parts of data out of a more complicated structure.  Let's take a look at an example.
+Map is one of the most common and most useful higher order functions, so let's start there.  Let's say I have a collection of data, and I need to perform some sort of transformation on it. Common examples might be taking complex data and formatting it for output, or plucking individual parts of data out of a more complicated structure.  Let's take a look at an example.
 
 {% highlight js %}
 var data = [
@@ -112,6 +112,8 @@ So let's talk a bit more about the intrinsic properties of a mapping operation.
 * The result of map is always a new collection - the input collection is _not_ modified.
 * Map operations are inherently chainable.  `data.map(...).map(...).map(...)` is a common pattern.
 * Mathematically, if using pure functions, `data.map(a).map(b)` is the same as `data.map(a ⋅ b);`. _Don't worry about this right now,_  (and this is not valid JavaScript syntax, it's mathematical) but what it means is that certain libraries can speed up your code by performing optimizations, knowing that they can transform your functions.
+
+We are only scratching the surface of the power and usefulness of `map`. If you take away nothing else from this article, learn and embrace at least this one function.  There are more complicated but elegant abilities built on the foundations of `map` that are outside the scope of this particular article, but that I hope to revisit soon.
 
 Note: some languages use `collect` or `transform` instead of `map`.
 
