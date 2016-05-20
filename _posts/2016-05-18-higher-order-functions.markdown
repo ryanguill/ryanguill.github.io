@@ -59,7 +59,7 @@ for (var i = 0; i < data.length; i++) {
 Pretty standard stuff, but lets take a look at how we might write the same thing with `map`:
 
 {% highlight js %}
-var output = data.map(function(item) {
+data.map(function(item) {
     return item.firstName + " " + item.lastName + " <" + item.email + ">"; 
 }).join(", ");
 //"Ryan Guill <ryanguill@gmail.com>, John Doe <johndoe@example.com>, Mary Smith <marysmith@example.com>"
@@ -73,7 +73,7 @@ But lets change it a bit to illustrate another point.
 var toFieldFormat = function(item) {
     return item.firstName + " " + item.lastName + " <" + item.email + ">"; 
 };
-var output = data.map(toFieldFormat).join(", ");
+data.map(toFieldFormat).join(", ");
 //"Ryan Guill <ryanguill@gmail.com>, John Doe <johndoe@example.com>, Mary Smith <marysmith@example.com>"
 {% endhighlight %}
 
@@ -108,7 +108,7 @@ Lets look at another example - lets say we have our array of data, but we want t
 var pluckId = function(item) {
     return item.id; 
 };
-var output = data.map(pluckId); //[1,2,3]
+data.map(pluckId); //[1,2,3]
 {% endhighlight %}
 
 So lets talk a little bit more about the intrinsic properties of a mapping operation.  
@@ -134,7 +134,7 @@ var data = [
 var isDev = function (user) {
     return user.groups.includes("dev");
 };
-var output = data.filter(isDev);
+data.filter(isDev);
 //[{userID: 1, name: "Ryan", groups: ["dev", "ops", "qa"]}, {userID: 4, name: "Paul", groups: ["dev", "qa"]}]
 {% endhighlight %}
 
@@ -290,7 +290,7 @@ var data = [
 var toFieldFormat = function(item) {
     return item.firstName + " " + item.lastName + " <" + item.email + ">"; 
 };
-var output = data.reduce(function(arr, item) {
+data.reduce(function(arr, item) {
    arr.push(toFieldFormat(item));
    return arr;
 }, []).join(", ");  
@@ -309,7 +309,7 @@ var data = [
 var isDev = function (user) {
     return user.groups.includes("dev");
 };
-var output = data.reduce(function(arr, user){
+data.reduce(function(arr, user){
     if (isDev(user)) {
         arr.push(user);
     }
@@ -383,9 +383,9 @@ You might notice I didn't talk about `forEach` - that is because while it is a h
 
 I hope these explanations and examples have whet your appetite and shown how you can do your everyday programming by passing around functions, leading to easier to read and test code. But, even though these are common software patterns, the goal shouldn't be to use them.  These are just tools that you should add to your repertoire and you should learn when they are and aren't appropriate.
 
-That said, I believe that if you learn these patterns not only will you find ways to utilize them in your code, once you internalize the idea of first class functions and higher order functions you will start thinking of code very differently.  Be careful though, higher order functions are gateway drugs.  Soon you will be learing about currying, memoization and before you know it youre talking about monads, functors and tagging Hindley-Milner notation on train cars - I've seen it a thousand times. ;)
+That said, I believe that if you learn these patterns not only will you find ways to utilize them in your code, once you internalize the idea of first class functions and higher order functions you will start thinking of code very differently.  Be careful though, higher order functions are gateway drugs.  Soon you will be learing about currying, memoization and before you know it you're talking about monads, functors and tagging Hindley-Milner notation on train cars - I've seen it a thousand times. ;)
 
 If you find any errors in this article, or have any other clarifications or insights to any of this, please leave a comment below, I would love to see them.
 
-Update: Thanks to Dan L from the cfml-slack for proofreading :)
+Update: Thanks to Dan L and Mingo from the cfml-slack for proofreading :)
     
