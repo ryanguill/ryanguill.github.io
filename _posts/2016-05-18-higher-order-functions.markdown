@@ -11,19 +11,19 @@ There are few things I have learned in my programming career that have paid off 
 
 <!-- break -->
 
-##Terminology
+## Terminology
 
 Lets go over just a bit of terminology before we begin to make sure everyone is on the same page. If you read this article and there are any other terms you dont understand, or need a further/better explanation for, let me know in the comments and I will try to either expand on them here or link to better resources.
 
-####First Class Function
+#### First Class Function
 
 A language that has first class functions is one where you can assign a function to a variable and pass that function around like data. Without first class functions you cannot have higher order functions - usually if you have one you have the other as well. 
 
-####Higher Order Functions
+#### Higher Order Functions
 
 A higher order function is a function that either takes another function as an argument or returns a function.  Thats pretty much it - it's all about functions as data.  Once you have a reference to a function in a variable and can pass it around or return it, many things become possible.  `Map` and `Reduce` and the other higher order functions we discuss are certainly not the only ones - you can create your own higher order functions.  These are just common examples of them that are also commonly baked into the standard libraries of many languages.  These functions we will discuss are generally not special either, you could write your own version of them without too much trouble - they are notable because they are solutions to common problems in everyday programming, no matter what the domain.
 
-####Pure Functions
+#### Pure Functions
 
 A pure function is one that given the same inputs will always return the same output, with no side effects.  An example might be `(a, b) => a + b;`. No matter what you provide as `a` and `b`, if you provide them again you will get the same answer.  The function doesn't do anything else either - no side effects means no writing to a database, or logging, or _mutating state_, just takes inputs, gives outputs, and what goes in deterministically directs what comes out.
 
@@ -31,7 +31,7 @@ There are many benefits to pure functions, most of which I will not go into, but
 
 Higher Order Functions do not _require_ you to use pure functions, but that is what you will use most of the time and you should always try to use pure functions whenever possible.
 
-##Map
+## Map
 
 Map is one of the easiest to grok, so lets start there.  Lets say I have a collection of data, and I need to perform some sort of transformation on it. Common examples might be taking complex data and formatting it for output, or plucking individual parts of data out of a more complicated structure.  Lets take a look at a simple example.
 
@@ -119,7 +119,7 @@ So lets talk a little bit more about the intrinsic properties of a mapping opera
 * Map operations are inherently chainable.  `data.map(...).map(...).map(...)` is a common pattern.
 * Mathematically, if using pure functions, `data.map(a).map(b)` is the same as `data.map(a ⋅ b);`. _Don't worry about this right now,_  (and this is not valid js syntax, its mathematical) but what it means is that certain libraries can speed up your code by performing optimizations, knowing that they can transform your functions.
 
-###Filter
+## Filter
 
 After `map`, `filter` is probably one of the most commonly used higher order functions.  Its really simple, you give it some data and a function to use as a "test" for your data - if the element passes it is included in the resulting collection, if not it is excluded.  Lets look at an example:
 
@@ -156,7 +156,7 @@ So properties of `filter`:
 * The results of filter is always a new collection - the input collection is _not_ modified.
 * Filter operations are also inherently chainable - you can do `data.filter(...).filter(...)` as much as you want, or, more commonly, `data.filter(...).map(...)`
 
-###Some and Every
+## Some and Every
 
 A few langagues use `any` instead of `some`, but `some` and `every` are aggregate functions, in that they take a collection, but they return a true or false.  We aren't going to spend much time on these, but lets take a look:
 
@@ -188,7 +188,7 @@ data.some(isManager); //false, no user is a manager
 
 Hopefully that is pretty straight forward.  The only other thing I will mention is that these functions take advantage of their logic to generally return without having to look at every item in the collection - `every` can return as soon as it hits the first `false` result, `some` can return as soon as it hits the first `true` result.
 
-###Reduce
+## Reduce
 
 So now we get to the big one, `reduce`.  For some reason `reduce` seems more opaque to the average developer than the others, and I think that stems from the fact that it is a bit of a swiss army knife of higher order functions. So lets start high level - what is a reduction? All it really means is that it will iterate over the collection, building up a result that will be returned at the end.  Thats it in a nutshell.  But as we will see, that generic definition lends itself to many different uses.
 
@@ -373,13 +373,13 @@ You should definitely learn `reduce` and how it work, and how to read it.  Get f
 
 Editorial Note: `reduce` can be called by many names in different langagues.  `reduce` is by far the most common, but other langauges might use `fold` or `aggregate`.  These are different words for the same concept.  There are also right and left versions of `reduce`, in javascript `reduce` is the left version.  Left and right just refer to if the reduction happens from left to right or right to left (ascending vs descending, forwards or backwards).  A right reduce is the same thing as doing a reverse of the data and then a left reduce.
 
-###Notes
+## Notes
 
 In _most_ langages, using these higher order functions instead of a loop is slower.  Almost always will be - the overhead of the function calls, plus the ability to use things like `break` or `continue` in certain examples means that you can optimze those loops much easier.  But the speed comes at the cost of maintainability and readability.  In any language that provides these functions I will _always_ reach for these where I can and only begrudgingly go back and rewrite performance critical code into the loop version once testing shows it necessary.
 
 You might notice I didn't talk about `forEach` - that is because while it is a higher order function, it doesn't generally take pure functions.  If you are passing a pure function to `forEach` you probably should be using `map` or something else. `forEach` (some languages just call it `each`) is for side effects - referencing outside variables (such as through closure) or writing output to the screen or talking to a database, etc.  There is nothing wrong with using it, but minimize it and consider first where you could use one of the other functions first and then use that output with your side-effecting code - it will provide much more testable and maintainable code.
 
-###Conclusion
+## Conclusion
 
 I hope these explanations and examples have whet your appetite and shown how you can do your everyday programming by passing around functions, leading to easier to read and test code. But, even though these are common software patterns, the goal shouldn't be to use them.  These are just tools that you should add to your repertoire and you should learn when they are and aren't appropriate.
 
