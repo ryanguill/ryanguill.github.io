@@ -46,14 +46,11 @@ var data = [
 Lets say we wanted to get a list of everyone to put in the "to" field for an email, something like `lastName, firstName <email>`.  Traditionally we might write a loop:
 
 {% highlight js %}
-var output = "";
+var output = [];
 for (var i = 0; i < data.length; i++) {
-    if (i > 0) {
-        output += ", ";   
-    }     
-    output += data[i].firstName + " " + data[i].lastName + " <" + data[i].email + ">";       
+    output.push(data[i].firstName + " " + data[i].lastName + " <" + data[i].email + ">");
 }
-//"Ryan Guill <ryanguill@gmail.com>, John Doe <johndoe@example.com>, Mary Smith <marysmith@example.com>"
+//["Ryan Guill <ryanguill@gmail.com>", "John Doe <johndoe@example.com>", "Mary Smith <marysmith@example.com>"]
 {% endhighlight %}
 
 Pretty standard stuff, but lets take a look at how we might write the same thing with `map`:
@@ -61,8 +58,8 @@ Pretty standard stuff, but lets take a look at how we might write the same thing
 {% highlight js %}
 data.map(function(item) {
     return item.firstName + " " + item.lastName + " <" + item.email + ">"; 
-}).join(", ");
-//"Ryan Guill <ryanguill@gmail.com>, John Doe <johndoe@example.com>, Mary Smith <marysmith@example.com>"
+});
+//["Ryan Guill <ryanguill@gmail.com>", "John Doe <johndoe@example.com>", "Mary Smith <marysmith@example.com>"]
 {% endhighlight %}
 
 The first thing to notice is that we dont have the loop machinery, no chance to get any of those details wrong, no need to keep track of another variable for the index. The code is much closer to _just the code that matters_. 
@@ -73,8 +70,8 @@ But lets change it a bit to illustrate another point.
 var toFieldFormat = function(item) {
     return item.firstName + " " + item.lastName + " <" + item.email + ">"; 
 };
-data.map(toFieldFormat).join(", ");
-//"Ryan Guill <ryanguill@gmail.com>, John Doe <johndoe@example.com>, Mary Smith <marysmith@example.com>"
+data.map(toFieldFormat);
+//["Ryan Guill <ryanguill@gmail.com>", "John Doe <johndoe@example.com>", "Mary Smith <marysmith@example.com>"]
 {% endhighlight %}
 
 This makes it clearer that `Map` takes a function, one that has the following argument signature: `function (element [, index] [, collection])`.  We won't go into detail with the other parameters, you generally don't have to use them.  Index can be useful in some cases, but generally speaking if you are using the collection argument in a `map` call, you're probably doing it wrong.
@@ -89,12 +86,9 @@ toFieldFormat({firstName: "Hindley", lastName: "Milner", email: "hindley@example
 and it would work just fine.  We could also write our original loop to use this function:
 
 {% highlight js %}
-var output = "";
+var output = [];
 for (var i = 0; i < data.length; i++) {
-    if (i > 0) {
-        output += ", ";   
-    }     
-    output += toFieldFormat(data[i]);       
+    output.push(toFieldFormat(data[i]));       
 }
 {% endhighlight %}
 
@@ -387,5 +381,5 @@ That said, I believe that if you learn these patterns not only will you find way
 
 If you find any errors in this article, or have any other clarifications or insights to any of this, please leave a comment below, I would love to see them.
 
-Update: Thanks to Dan L and Mingo from the cfml-slack for proofreading :)
+Update: Thanks to Dan L from the cfml-slack for proofreading :)
     
