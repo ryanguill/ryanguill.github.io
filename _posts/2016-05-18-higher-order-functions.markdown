@@ -7,7 +7,7 @@ categories: functional higher-order-functions
 tags:	functional higher-order-functions map-reduce
 ---
 
-There are few things I have learned in my programming career that have paid off like higher order functions.  `Map`, `Reduce` and `Filter` with their cousins, along with the concept of passing functions as data in general make code easier to reason about, easier to write, easier to test.  I find myself evangelizing these concepts often, so I thought I would try to do my best to give an introduction to them, along with some real world examples of how they can improve your everyday programming life.
+There are few things I have learned in my programming career that have paid off like higher order functions.  `Map`, `Reduce` and `Filter` with their cousins, along with the concept of passing functions as data in general make code easier to reason about, easier to write, easier to test.  I find myself evangelizing these concepts often, so I thought I would try to do my best to give an introduction to them, along with some real world examples of how they can improve your everyday programming life.  These examples are in javascript, but the concepts are universal.
 
 <!-- break -->
 
@@ -98,7 +98,7 @@ for (var i = 0; i < data.length; i++) {
 }
 {% endhighlight %}
 
-but now you can see that we have abstracted out the actual logic that matters and all thats left is the plumbing.  I don't know about you but im tired of writing loops for most things.  The loop _is not what is interesting_ about this code.  When I come back to it in 6 months, I don't want to read the loop to understand what is happening - I want to get to the meat of what the author is trying to achieve.  
+But now you can see that we have abstracted out the actual logic that matters and all thats left is the plumbing.  I don't know about you but im tired of writing loops for most things.  The loop _is not what is interesting_ about this code.  When I come back to it in 6 months, I don't want to read the loop to understand what is happening - I want to get to the meat of what the author is trying to achieve.  
 
 Also, `toFieldFormat` is easily testable! It is a pure function, and abstracted out we can easily pass in a variety of inputs and deterministically check their outputs.  
 
@@ -151,7 +151,7 @@ Again, the testing function is a pure function, which means easy to test, and th
 
 So properties of `filter`:
 
-* Filter will always return the same type of collection as the input, with fewere than or equal to the number of elements in the input.  
+* Filter will always return the same type of collection as the input, with fewer than or equal to the number of elements in the input.  
 * Filter is used to _remove_ items from a collection that fail the testing function.
 * The results of filter is always a new collection - the input collection is _not_ modified.
 * Filter operations are also inherently chainable - you can do `data.filter(...).filter(...)` as much as you want, or, more commonly, `data.filter(...).map(...)`
@@ -190,7 +190,7 @@ Hopefully that is pretty straight forward.  The only other thing I will mention 
 
 ## Reduce
 
-So now we get to the big one, `reduce`.  For some reason `reduce` seems more opaque to the average developer than the others, and I think that stems from the fact that it is a bit of a swiss army knife of higher order functions. So lets start high level - what is a reduction? All it really means is that it will iterate over the collection, building up a result that will be returned at the end.  Thats it in a nutshell.  But as we will see, that generic definition lends itself to many different uses.
+So now we get to the big one, `reduce`.  For some reason `reduce` seems more opaque to the average developer than the others, and I think that stems from the fact that it is a bit of a swiss army knife of higher order functions. So lets start high level - what is a reduction? All it really means is that it will iterate over the collection, building up a result that will be returned at the end.  That's it in a nutshell.  But as we will see, that generic definition lends itself to many different uses.
 
 If you have ever used an aggregate function in SQL, you used a reduction.  If you have ever used `join()` you've used a reduction.  
 
@@ -235,7 +235,7 @@ data.reduce(join);
 //"1,2,3,4,5"
 {% endhighlight %}
 
-In this case, we don't pass a starting value, and have our join handle it appropriately.  Now, the native `string.prototype.join` is much better at it's job than this, but hopefully this was useful as an illustration.
+In this case, we don't pass a starting value, and have our join handle it appropriately.  Now, the native `string.prototype.join` is much better at its job than this, but hopefully this was useful as an illustration.
 
 Lets look at another example, this time lets see if we can find the minimum number out of a set.
 
@@ -356,7 +356,7 @@ data.reduce(function(result, user) {
 data.reduce(function(result, user) {
    return result || isDev(user);
 }, false);  
-/true, at least one user is a dev
+//true, at least one user is a dev
 
 //some isManager
 data.reduce(function(result, user) {
@@ -365,7 +365,7 @@ data.reduce(function(result, user) {
 //false, no user is a manager
 {% endhighlight %}
 
-Now, do I recommend then that you just use `reduce` for everything and ignore the other built in functions? Absolutely not - as you can see from the examples, the `reduce` versions are more complicated in every case.  Not bad - but definately not as streamlined.  The api of the other functions help readability too - when you see `map` or `filter` you know exactly what is going on. Plus the specialized versions of these functions can take care of other optimizations behind the scenes.
+Now, do I recommend then that you just use `reduce` for everything and ignore the other built in functions? Absolutely not - as you can see from the examples, the `reduce` versions are more complicated in every case.  Not bad - but definitely not as streamlined.  The api of the other functions help readability too - when you see `map` or `filter` you know exactly what is going on. Plus the specialized versions of these functions can take care of other optimizations behind the scenes.
 
 Where `reduce` shines is when you either don't have a more specialized function to use, or when you might need to combine multiple actions together, like in our user / group combination example.
 
@@ -375,7 +375,7 @@ Editorial Note: `reduce` can be called by many names in different langagues.  `r
 
 ## Notes
 
-In _most_ langages, using these higher order functions instead of a loop is slower.  Almost always will be - the overhead of the function calls, plus the ability to use things like `break` or `continue` in certain examples means that you can optimze those loops much easier.  But the speed comes at the cost of maintainability and readability.  In any language that provides these functions I will _always_ reach for these where I can and only begrudgingly go back and rewrite performance critical code into the loop version once testing shows it necessary.
+In _most_ languages, using these higher order functions instead of a loop is slower.  Almost always will be - the overhead of the function calls, plus the ability to use things like `break` or `continue` in certain examples means that you can optimze those loops much easier.  But the speed comes at the cost of maintainability and readability.  In any language that provides these functions I will _always_ reach for these where I can and only begrudgingly go back and rewrite performance critical code into the loop version once testing shows it necessary.
 
 You might notice I didn't talk about `forEach` - that is because while it is a higher order function, it doesn't generally take pure functions.  If you are passing a pure function to `forEach` you probably should be using `map` or something else. `forEach` (some languages just call it `each`) is for side effects - referencing outside variables (such as through closure) or writing output to the screen or talking to a database, etc.  There is nothing wrong with using it, but minimize it and consider first where you could use one of the other functions first and then use that output with your side-effecting code - it will provide much more testable and maintainable code.
 
@@ -387,5 +387,5 @@ That said, I believe that if you learn these patterns not only will you find way
 
 If you find any errors in this article, or have any other clarifications or insights to any of this, please leave a comment below, I would love to see them.
 
-
+Update: Thanks to Dan L from the cfml-slack for proofreading :)
     
