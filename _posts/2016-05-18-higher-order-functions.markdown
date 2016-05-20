@@ -367,7 +367,7 @@ Now, do I recommend then that you just use `reduce` for everything and ignore th
 
 Where `reduce` shines is when you either don't have a more specialized function to use, or when you might need to combine multiple actions together, like in our user / group combination example.
 
-You should definitely learn `reduce` and how it work, as well as how to read it.  Get familiar with how the accumulation argument is passed from one iteration to the next - it's not difficult with very little practice.
+You should definitely learn `reduce` and how it works, as well as how to read it.  Get familiar with how the accumulation argument is passed from one iteration to the next - it's not difficult with very little practice.
 
 Editorial Note: `reduce` can be called by many names in different languages.  `reduce` is by far the most common, but other languages might use `fold` or `aggregate`.  These are different words for the same concept.  There are also right and left versions of `reduce`, in JavaScript `reduce` is the left version.  Left and right just refer to if the reduction happens from left to right or right to left (ascending vs descending, forwards or backwards).  A right reduce is the same thing as doing a reverse of the data and then a left reduce.
 
@@ -385,5 +385,5 @@ That said, I believe that if you learn these patterns not only will you find way
 
 If you find any errors in this article, or have any other clarifications or insights to any of this, please leave a comment below, I would love to see them.
 
-Update: Thanks to Dan L, Mingo Hagen and Paul Turner from the cfml-slack for proofreading :)
+Update: Thanks to Dan L, Mingo Hagen, Paul Turner and Adam Cameron from the cfml-slack for proofreading :)
     
