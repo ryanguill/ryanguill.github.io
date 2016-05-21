@@ -227,7 +227,7 @@ Remember I said that `join` is a type of reduction? Let's take a look at what a 
 {% highlight js %}
 var data = [1,2,3,4,5];
 var join = function(a, b) {
-    if (a === 'undefined') return b;
+    if (typeof a === 'undefined') return b;
     return a + ',' + b;  
 };    
 data.reduce(join);
