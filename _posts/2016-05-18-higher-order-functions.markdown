@@ -112,7 +112,7 @@ So let's talk a bit more about the intrinsic properties of a mapping operation.
 * Map will always return a collection the same size and order as its input. If you map an array of 3 things, you will get an array of 3 elements back, and the first item in the input will always correspond with the first item of the output.
 * The result of map is always a new collection - the input collection is _not_ modified.
 * Map operations are inherently chainable.  `data.map(...).map(...).map(...)` is a common pattern.
-* Mathematically, if using pure functions, `data.map(a).map(b)` is the same as `data.map(a ⋅ b);`. _Don't worry about this right now,_  (and this is not valid JavaScript syntax, it's mathematical) but what it means is that certain libraries can speed up your code by performing optimizations, knowing that they can transform your functions.
+* Mathematically, if using pure functions, `data.map(a).map(b)` is the same as `data.map(b ⋅ a);`. _Don't worry about this now,_  (and this is not valid JavaScript syntax, it's mathematical) but what it means is that certain libraries can speed up your code by performing optimizations, knowing that they can transform your functions for performance and not change the meaning of your code.
 
 We are only scratching the surface of the power and usefulness of `map`. If you take away nothing else from this article, learn and embrace at least this one function.  There are more complicated but elegant abilities built on the foundations of `map` that are outside the scope of this particular article, but that I hope to revisit soon.
 
