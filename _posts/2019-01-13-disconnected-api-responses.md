@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Disconnected API Responses"
-date: 2019-01-14 12:00:00
+date: 2019-01-13 12:00:00
 author: Ryan Guill
 categories: api rest queue
 tags: api rest queue
