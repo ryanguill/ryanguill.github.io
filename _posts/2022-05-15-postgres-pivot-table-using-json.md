@@ -9,8 +9,8 @@ tags:	postgresql sql
 
 Something I have a need to do often but can be difficult to do at times in SQL is to create a pivot table. As an example imagine wanting to see customers and their revenue by month. It is straightforward to create a normal data set where the dates are the rows and you have a revenue amount for each. Something like this: 
 
-| dte        | total |
-|:-----------|------:|
+|        dte | total |
+|-----------:|------:|
 | 2022-01-01 | 22030 |
  | 2022-02-01 | 22753 |
  | 2022-03-01 |     0 |
@@ -34,14 +34,14 @@ But you quickly come up to two obstacles as you try to take it further - you eit
 
 or you want to see multiple customers, which as a column can be difficult, or even harder is having the months as columns and the customers as rows:
 
-| customer_id |   jan |   feb | mar |  apr |  may |   jun |   jul |  aug |   sep |   oct |  nov |   dec |  
+|      cus_id |   jan |   feb | mar |  apr |  may |   jun |   jul |  aug |   sep |   oct |  nov |   dec |  
 |------------:|------:|------:|----:|-----:|-----:|------:|------:|-----:|------:|------:|-----:|------:|
 |           1 |     0 | 10170 |   0 | 5399 |    0 | 14821 |  7927 |    0 |    14 | 15466 | 3675 | 14447 |
 |           2 | 22030 | 12583 |   0 | 4057 | 7798 | 23457 | 10809 | 6794 | 21019 | 13110 | 6497 | 27454 |
 
 The term for this is pivot table - which is something you may have done many times in Excel or other spreadsheet application.
 
-But this is difficult in SQL, because SQL requires you to have a static column list. You can't ask SQL to give you whatever columns are necessary, you must declare them in your query. (`*` may seem like an exception to this rule, but in this case the SQL engine still knows what the columns are going to be before the query is executed).
+But this is difficult in SQL, because SQL requires you to have a static column list. You can't ask SQL to give you whatever columns are necessary, you must declare them in your query. (`SELECT *` may seem like an exception to this rule, but in this case the SQL engine still knows what the columns are going to be before the query is executed).
 
 Luckily Postgres gives you a way around this. If you want actual columns you still have to specify them, but the hard part of aggregation into these pivoted columns and rows are made much easier. The key is using the JSON functionality, which allows you to represent complex values in a single cell. It allows you to aggregate the values into what really represents multiple values, and then pull them back apart after the fact.
 
@@ -104,7 +104,7 @@ ORDER BY customer_id
 
 Which gives results like we were after above.
 
-If you would like to see how this is done, I have an interactive fiddle you can play with that shows you step by step how each of these parts work: https://dbfiddle.uk/?rdbms=postgres_14&fiddle=39e115cb8afd6e62c0101286ecd08a3f
+If you would like to see how this is done, I have an interactive fiddle you can play with that shows you step by step how each of these parts work: [https://dbfiddle.uk/?rdbms=postgres_14&fiddle=39e115cb8afd6e62c0101286ecd08a3f](https://dbfiddle.uk/?rdbms=postgres_14&fiddle=39e115cb8afd6e62c0101286ecd08a3f)
 
 This example is using PG 15, but this functionality works all the way back to PG 9.5.
 
