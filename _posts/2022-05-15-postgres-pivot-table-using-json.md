@@ -104,7 +104,9 @@ ORDER BY customer_id
 
 Which gives results like we were after above.
 
-If you would like to see how this is done, I have an interactive fiddle you can play with that shows you step by step how each of these parts work: [https://dbfiddle.uk/?rdbms=postgres_14&fiddle=39e115cb8afd6e62c0101286ecd08a3f](https://dbfiddle.uk/?rdbms=postgres_14&fiddle=39e115cb8afd6e62c0101286ecd08a3f)
+If you would like to see how this is done, I have an interactive fiddle you can play with that shows you step by step how each of these parts work: 
+
+[https://dbfiddle.uk/?rdbms=postgres_14&fiddle=39e115cb8afd6e62c0101286ecd08a3f](https://dbfiddle.uk/?rdbms=postgres_14&fiddle=39e115cb8afd6e62c0101286ecd08a3f)
 
 This example is using PG 15, but this functionality works all the way back to PG 9.5.
 
