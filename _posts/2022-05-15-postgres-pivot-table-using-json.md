@@ -10,15 +10,15 @@ tags:	postgresql sql
 Something I have a need to do often but can be difficult to do at times in SQL is to create a pivot table. As an example imagine wanting to see customers and their revenue by month. It is straightforward to create a normal data set where the dates are the rows and you have a revenue amount for each. Something like this: 
 
 |        dte | total |
-|-----------:|:------|
+|-----------:|------:|
 | 2022-01-01 | 22030 |
  | 2022-02-01 | 22753 |
- | 2022-03-01 | 0     |
- | 2022-04-01 | 9456  |
- | 2022-05-01 | 7798  |
+ | 2022-03-01 |     0 |
+ | 2022-04-01 |  9456 |
+ | 2022-05-01 |  7798 |
  | 2022-06-01 | 38278 |
  | 2022-07-01 | 18736 |
- | 2022-08-01 | 6794  |
+ | 2022-08-01 |  6794 |
  | 2022-09-01 | 21033 |
  | 2022-10-01 | 28576 |
  | 2022-11-01 | 10172 |
