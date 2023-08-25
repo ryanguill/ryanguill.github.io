@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Notes on PostgreSQL Explain Analyze"
-date: 2023-08-26 12:00:00
+date: 2023-08-25 12:00:00
 author: Ryan Guill
 categories: postgresql sql
 tags: postgresql sql
