@@ -14,7 +14,7 @@ One thing you'll want to learn if you use PostgreSQL for any length of time is h
 
 The first thing to know is that you almost always want to use `EXPLAIN ANALYZE`, but its important to understand that the `ANALYZE` keyword will cause PG to actually execute your query so it can give you an execution time. This has two consequences:
 
-If you use `EXPLAIN ANALYZE` on DML statements (that is `INSERT`, `UPDATE,`, `DELETE` statements, calling functions which do these things, etc), it will actually _run_ those statements. So you want to make sure you are in a transaction that you can roll back.
+If you use `EXPLAIN ANALYZE` on DML statements (that is `INSERT`, `UPDATE`, `DELETE`, statements, calling functions which do these things, etc), it will actually _run_ those statements. So you want to make sure you are in a transaction that you can roll back.
 
 And even though `EXPLAIN ANALYZE` runs the statement, it throws away the actual results. 
 
@@ -50,9 +50,9 @@ So two things to draw from this: make sure you understand the difference between
 
 The next main topic I want to mention is about the `cost` values you see in `EXPLAIN` output. 
 
-`cost` values should be considered unit-less, and should only be used to compare queries doing similar things, and only agains the same database instance.  Costs are calculated using many different things, such as the data you have in your database, the statistics it has gathered about that data, the parameters in that instance such as `work_mem`, etc. You cannot compare costs directly from dev environment and production, they can be two completely different things, even if they look comparable.
+`cost` values should be considered unit-less, and should only be used to compare queries doing similar things, and only against the same database instance.  Costs are calculated using many different things, such as the data you have in your database, the statistics it has gathered about that data, the parameters in that instance such as `work_mem`, etc. You cannot compare costs directly from dev environment and production, they can be two completely different things, even if they look comparable.
 
-What you can do is compare a query to a different version of the same query (agains the same instance) to see if you are improving things or not and on what scale. You can also compare them inside of a single query plan to understand the highest cost parts of your query.
+What you can do is compare a query to a different version of the same query (against the same instance) to see if you are improving things or not and on what scale. You can also compare them inside of a single query plan to understand the highest cost parts of your query.
 
 But don't get hung up on the cost numbers themselves. Use them as a relative measurement, they are not hard and fast numbers.
 
