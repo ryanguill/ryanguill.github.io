@@ -62,6 +62,6 @@ As far as what you are looking for when reading `EXPLAIN` output, that is a much
 
 The next thing most common you are looking for when trying to improve query performance is `Nested Loop`. These will be places where things cant be done in a batch and has to be looped over. The fix here isn't always straight forward, but oftentimes is a matter of doing a better filter earlier in the execution of the query.
 
-This information is of course nowhere near exhaustive, just a place to start. I am far from an expert in understanding query plans, I learn more all the time. If you need more you should look at resources such as https://use-the-index-luke.com/, or use explain visualization tools such as https://explain.dalibo.com/, https://tatiyants.com/pev/#/plans, https://explain.depesz.com/ or https://www.pgexplain.dev/
+This information is of course nowhere near exhaustive, just a place to start. I am far from an expert in understanding query plans, I learn more all the time. If you need more you should look at resources such as [use-the-index-luke.com](https://use-the-index-luke.com/), or use explain visualization tools such as [explain.dalibo.com](https://explain.dalibo.com/), [PEV](https://tatiyants.com/pev/#/plans), [depesz](https://explain.depesz.com/) or [pgexplain.dev](https://www.pgexplain.dev/)
 
 But like most things the best thing you can do is practice, play with queries and explain output and keep reading to understand what is happening. In my experience you can generally get great performance with a little work in most cases.
