@@ -68,6 +68,9 @@ I'm certain you could do this too with custom types, but those are also very opa
 <dt>I wish that jsonschema was supported natively and we could write constraints using it</dt>
 <dd>Basically I wish <a href="https://supabase.com/blog/pg-jsonschema-a-postgres-extension-for-json-validation">pg_jsonschema from supabase</a> was built in</dd>
 
+<dt>I wish that there was a <code>-</code> operator or <code>jsonb_diff()</code> function for JSONB like HSTORE to get a diff of objects</dt>
+<dd><a href="https://dbfiddle.uk/HvdGyvRp">Here is an example</a>. Super useful for audit logging.</dd>
+
 <dt>I wish you could specify in the schema that view columns were not null.</dt>
 <dd>All view columns are forced to be nullable, even if they aren't really. I don't know how you could do this or what the syntax should look like, but it is frustrating to have all columns in a view be nullable. PG should be smart enough to figure out if it is possible in most if not all cases.</dd>
 
@@ -117,7 +120,7 @@ I can concede that this might be confusing for beginners to SQL. But in all the 
 
 
 <dt>I wish I could have leading and trailing commas for column lists!</dt>
-<dd>This may be my number one thing on the entire list. I am a column preceding kind of guy. But even if you're the opposite, I bet you have wished for this too.<br />
+<dd>This may be my number one thing on the entire list. I am a comma preceding kind of guy. But even if you're the opposite, I bet you have wished for this too.<br />
 Please, allow these two queries to be valid:
 
 {% highlight sql %}
@@ -212,8 +215,10 @@ See also <code>HASH INDEX</code>es above.</dd>
 
 
 <dt>I wish there was a built in scheduler. PG_CRON is great, but it should be built in.</dt>
-<dd>Similarly, I wish there was a way to define an automatic update frequency on a materialized view.<br>
-Or better yet, create implicit dependencies on the tables and possibly rows (where filter) that he db can detect that the source has updated and it automatically updates the materialized view.</dd>
+<dd>A scheduler would allow us to build many things we need separate tech for today, such as automatic job or event creation, summarization of data into an append-only log, rebuild statistics and indexes, see also async queries below.</dd>
+
+<dt>I wish there was a way to define an automatic update frequency on a materialized view</dt>
+<dd>Or better yet, create implicit dependencies on the tables and possibly rows (where filter) that he db can detect that the source has updated and it automatically updates the materialized view.</dd>
 
 
 <dt>I wish I could use hints.</dt>
@@ -222,13 +227,17 @@ Or better yet, create implicit dependencies on the tables and possibly rows (whe
 
 <dt>I wish I could easily set an identifier when starting a transaction and have that identifier automatically added as metadata to the row as who inserted and updated the row last.</dt>
 
-<dt>I wish I could have nested transactions.</dt>
+<dt>I wish I could use nested transactions.</dt>
+<dd>Savepoints sorta work for this, but nested transactions would be cleaner</dd>
 
 <dt>I wish I could create a point in time and roll back to that point in time, regardless of transactions.</dt>
 <dd>This would be amazing for unit tests. Let me set the DB into a known state, set a save point, run a bunch of statements, and then throw everything away after the save point.<br>
 Even if this required putting the database into a single user mode or similar, this would be so valuable.<br>
-But this has to work across all transactions, so that you can roll back to a known state.
+But this has to work across all transactions, so that you can roll back to a known state. Transaction save points dont work for this.
 </dd>
+
+<dt>Bonus: I wish that I could create a point in time and then run many transactions (directly, or through an application, whatever) and then get the DDL/DDM necessary as SQL statements to go from the saved state to the current state.</dt>
+<dd>I would love to be able to take a seed database, hook it up to an app and use the UI to set up scenarios that I could then use in my unit tests. This isn't bad in isolated cases, but when setting up a scenario takes coordination of tens of tables, this would be much easier.</dd>
 
 
 <dt>I wish there were different storage engines similar to mysql, specifically I want to have a columnar store format in PG.</dt>
@@ -264,6 +273,12 @@ Bonus points if it is a full environment that has access to all of the schema (a
 <dt>I wish we had better connections in PG</dt>
 <dd>I know there are reasons, and I know that this might be the hardest thing on this list, but connections are one of the biggest pain points in modern stacks. Connections take too many resources, and needs for pooling and connection sharing is one of the hardest parts about connecting your serverless app to your database. I don't know what the solutions really look like, but all of the existing solutions suck.</dd>
 
+<dt>I wish I could submit an async query</dt>
+<dd>Years ago using DB2 on an AS/400 I would submit a query to "batch", meaning we would provide the query and specify a library (schema) and table to save the results to, and then set a job priority level and kick it off. Back then it wasn't uncommon to be running queries that took hours to days to finish.<br>
+It isn't common that I need to run queries that take quite that long today (and most of those times would be better suited for a data warehouse), but still there are times where I want to run a query but not hold a connection open in some client to allow it to run.<br>
+I wish I could submit a query to postgres in such a way that I don't want to wait on the result or have a connection open. It would just also require a way to inquire about the status of a job.<br>
+Note: give us a job scheduler like pg_cron built in and we could build this ourselves.</dd>
+
 <dt>I wish that the documentation had better SEO</dt>
 <dd>Oftentimes when you search for something you are taken to documentation for an old version. I wish that they would update their indexes to point to the latest version by default. Especially for features that have been around for a long time, ending up in 9.x documentation and not realizing it might mean that you are missing the latest information.</dd>
 
@@ -278,3 +293,5 @@ You should also read <a href="https://jkatz05.com/post/postgres/postgresql-2024/
 <h2> Conclusion</h2>
 
 I want this to be a living document. I can't wait for someone to tell me how wrong I am in the comments. When that happens I'll update this list. And tell me what you thing I missed, the things you wish for - I'll add new ideas as well. And will be very happy to celebrate when any of these are addressed in PostgreSQL! I really hope this post is received in the spirit it is intended - the only reason I am making this post is because I believe and have seen amazing new capabilities added to PG over the years. PG release notes are one of my favorite things! These are not at all intended to be criticism. There are many many years of reasons why things are the way they are. But PG has so much potential to be bigger and better than it already is. 
+
+Special thanks to Jacob Elder, Ian Burns, and Bryce Hipp for the help with this article.
