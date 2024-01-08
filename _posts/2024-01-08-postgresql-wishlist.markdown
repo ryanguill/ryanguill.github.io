@@ -39,7 +39,7 @@ So lets start with DDL, how we create and manage our schema. I have to start thi
 Bonus points if I could say that it could be inserted as null, and updated from null, but not updated if the value is anything other than null.</dd>
 
 <dt>I wish I could set a column to be generated on update.</dt>
-<dd>The easiest example here would to set an updated_at column automatically if a row is updated in any way, but without having to specify it. I want to be able to do this when I create (or alter) the table, but never have to think about it again. <code>created_at</code> is easiest enough with a default value. But would be better if it could be made immutable.</dd>
+<dd>The easiest example here would to set an <code>updated_at</code> column automatically if a row is updated in any way, but without having to specify it. I want to be able to do this when I create (or alter) the table, but never have to think about it again. <code>created_at</code> is easiest enough with a default value. But would be better if it could be made immutable.</dd>
 
 <!-- <br>
 <h3>Foreign Keys</h3> -->
@@ -204,8 +204,8 @@ EXCEPTION
 See also <code>HASH INDEX</code>es above.</dd>
 
 
-<dt>I wish columns like created_at and updated_at were automatic.</dt>
-<dd>Nobody should ever need to create these columns on a table in my opinion. I am not sure how to do this in a backwards compatable way, but every record written to every table should capture the timestamp at which it was inserted and when it was last updated. If users need something different they can capture it themselves like they do today, but the vast majority of use cases would be handled automatically.</dd>
+<dt>I wish columns like <code>created_at</code> and <code>updated_at</code> were automatic.</dt>
+<dd>Nobody should ever need to create these columns on a table in my opinion. I am not sure how to do this in a backwards compatible way, but every record written to every table should capture the timestamp at which it was inserted and when it was last updated. If users need something different they can capture it themselves like they do today, but the vast majority of use cases would be handled automatically.</dd>
 
 <dt>I wish that bitemporal features could be built into the database by default.</dt>
 <dd>This deserves and will hopefully get it's own blog series soon.</dd>
