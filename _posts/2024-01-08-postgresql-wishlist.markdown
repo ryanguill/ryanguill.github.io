@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My PostgreSQL wishlist"
-date: 2024-01-03 12:00:00
+date: 2024-01-08 00:00:00
 author: Ryan Guill
 categories: postgresql sql
 tags: postgresql sql database
