@@ -5,6 +5,7 @@ date:   2024-06-24 12:00:00
 author: Ryan Guill
 categories: postgresql sql
 tags:	postgresql sql
+cover:  "/assets/window.png"
 ---
 
 Lets say you have a table of events, each representing a point in time when an event occurred. Maybe it's clicks in your applications, or pages that a user visited. You might like to see how long users are spending in your application, or what they are doing in a given session.
