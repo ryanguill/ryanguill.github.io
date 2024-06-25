@@ -39,7 +39,7 @@ or you want to see multiple customers, which as a column can be difficult, or ev
 |           1 |     0 | 10170 |   0 | 5399 |    0 | 14821 |  7927 |    0 |    14 | 15466 | 3675 | 14447 |
 |           2 | 22030 | 12583 |   0 | 4057 | 7798 | 23457 | 10809 | 6794 | 21019 | 13110 | 6497 | 27454 |
 
-The term for this is pivot table - which is something you may have done many times in Excel or other spreadsheet application.
+The term for this is pivot table - which is something you may have done many times in Excel or other spreadsheet applications.
 
 But this is difficult in SQL, because SQL requires you to have a static column list. You can't ask SQL to give you whatever columns are necessary, you must declare them in your query. (`SELECT *` may seem like an exception to this rule, but in this case the SQL engine still knows what the columns are going to be before the query is executed).
 
