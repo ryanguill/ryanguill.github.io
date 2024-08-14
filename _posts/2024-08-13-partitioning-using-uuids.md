@@ -6,11 +6,11 @@ author: Ryan Guill
 categories: postgresql sql uuid
 tags:	postgresql sql uuid
 ---
-Recently I had a situation where I needed to process quite a few records, lets say around 100k, and the processing of each record was around 2 seconds. The math on that wasn't very pretty, so I needed to partition the set of data so that I could run multiple instances of the processing at the same time - but where each instance would have their own data and I wouldn't try to process a record by more than one instance.
+Recently I had a situation where I needed to process quite a few records, lets say around 100k, and the processing of each record was around 2 seconds. The math on that wasn't pretty, so I needed to find a way to partition the set of data so that I could run multiple instances of the processing at the same time - but where each instance would have their own data and I wouldn't try to process a record by more than one instance.
 
 Normally you would want to look for some natural key if you can, but in this case there wasn't anything I could use, especially that would be well distributed. I also wanted to have the flexibility to partition for as few or as many instances as I needed - I might start with 5 instances but that might not be enough.
 
-The one thing I do have are UUIDs. We use UUIDs for virtually all of our keys - an explanation of all of the benefits of that will have to be its own blog post someday.
+The one thing I did have is UUIDs. We use UUIDs for virtually all of our keys - an explanation of all of the benefits of that will have to be its own blog post someday.
 
 So I had the thought to use UUIDs to do the partitioning. The easiest thing you could do is look at the last character, that would quickly give you 16 partitions without much work, and most of the versions of UUIDs the last character would be fairly well distributed.
 
