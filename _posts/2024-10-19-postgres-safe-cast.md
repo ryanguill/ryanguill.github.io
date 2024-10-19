@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "safe_cast function in postgresql"
+title:  "safe_cast() function for postgresql"
 date:   2024-10-17 12:00:00
 author: Ryan Guill
 categories: postgresql sql
@@ -93,5 +93,5 @@ MSSQL has `TRY_CAST`: [https://learn.microsoft.com/en-us/sql/t-sql/functions/try
 
 Snowflake has `TRY_CAST`: [https://docs.snowflake.com/en/sql-reference/functions/try_cast](https://docs.snowflake.com/en/sql-reference/functions/try_cast)
 
-DuckDb has `TRY_CAST` [https://duckdb.org/docs/sql/expressions/cast.html#try_cast](https://duckdb.org/docs/sql/expressions/cast.html#try_cast)
+DuckDB has `TRY_CAST` [https://duckdb.org/docs/sql/expressions/cast.html#try_cast](https://duckdb.org/docs/sql/expressions/cast.html#try_cast)
 
