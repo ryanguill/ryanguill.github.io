@@ -6,11 +6,11 @@ author: Ryan Guill
 categories: postgresql sql
 tags:	postgresql sql
 ---
-I love using JSON in postgres. When support for JSON types and functionality first started coming out in SQL I generally thought it was neat but that it wouldn't be something I would ever want to use in production. I could not have been more wrong.
+I love using JSON in relational databases. When support for JSON types and functionality first started coming out in SQL I generally thought it was neat but that it wouldn't be something I would ever want to use in production. I could not have been more wrong.
 
 I could talk at length (and have) about all the ways that it is useful, but if you do you will find that the main way you pull information out of JSON will bring it out as TEXT. And frequently when you're using JSON you can't be sure that the data is exactly the right format you expect anyway. Lately I store a lot of JSON that comes back from LLMs, and while it gets it right most of the time, you can never really be sure - you need to trust be verify.
 
-So I have been using this function for a long time to safely convert from text to a given datatype in SQL. If the cast can be made successfully it will, otherwise it will return the second argument as a default - most of the time I use `null` but it can be anything.
+So I have been using this function for a long time to safely convert from text to a given datatype in postgresql. If the cast can be made successfully it will, otherwise it will return the second argument as a default - most of the time I use `null` but it can be anything.
 
 ```sql
 /* 
@@ -87,7 +87,7 @@ select
 	;
 ```
 
-Other databases have similar functionality built in, but most do not have the ability to set a default if it fails baked into the function, most just return null. (The following list is the ones I know off the top of my head, and is not meant to be exhaustive)
+Other databases have similar functionality built in, but most do not have the ability to set a default if the value cannot be safely cast baked into the function, most just return null and then you can use `coalesce` or similar to set a different default if you need to. (The following list is the ones I know off the top of my head, and is not meant to be exhaustive)
 
 MSSQL has `TRY_CAST`: [https://learn.microsoft.com/en-us/sql/t-sql/functions/try-cast-transact-sql?view=sql-server-ver16](https://learn.microsoft.com/en-us/sql/t-sql/functions/try-cast-transact-sql?view=sql-server-ver16)
 
