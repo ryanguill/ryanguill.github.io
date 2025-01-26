@@ -38,15 +38,15 @@ Here is an example of the query (much simplified and reworked to try and focus o
 ```sql
 with data (id, document_id, value, precedence_level, updated_at) as (
 	values
-        ( 1, 1, 'Z', 'DEFAULT', '2025-01-01'::date)
-        , ( 2, 1, 'Y', 'DEFAULT', '2025-01-02') -- later DEFAULT beats previous DEFAULT
-        , ( 3, 1, 'X', 'DEFAULT', '2025-01-03') -- later DEFAULT beats previous DEFAULT
-        , ( 4, 1, 'E', 'IMPORTANT', '2025-01-04') -- IMPORTANT beats DEFAULT
-        , ( 5, 1, 'F', 'DEFAULT', '2025-01-05') -- previous IMPORTANT beats this record
-        , ( 6, 1, 'D', 'IMPORTANT', '2025-01-06') -- later IMPORTANT beats previous IMPORTANT
-        , ( 7, 1, 'C', 'RESET', '2025-01-07') -- RESET beats everything else
-        , ( 8, 1, 'B', 'DEFAULT', '2025-01-08') -- bc last record was RESET this DEFAULT now takes precedence
-        , ( 9, 1, 'A', 'IMPORTANT', '2025-01-09') -- IMPORTANT overrides DEFAULT
+		( 1, 1, 'Z', 'DEFAULT', '2025-01-01'::date)
+		, ( 2, 1, 'Y', 'DEFAULT', '2025-01-02') -- later DEFAULT beats previous DEFAULT
+		, ( 3, 1, 'X', 'DEFAULT', '2025-01-03') -- later DEFAULT beats previous DEFAULT
+		, ( 4, 1, 'E', 'IMPORTANT', '2025-01-04') -- IMPORTANT beats DEFAULT
+		, ( 5, 1, 'F', 'DEFAULT', '2025-01-05') -- previous IMPORTANT beats this record
+		, ( 6, 1, 'D', 'IMPORTANT', '2025-01-06') -- later IMPORTANT beats previous IMPORTANT
+		, ( 7, 1, 'C', 'RESET', '2025-01-07') -- RESET beats everything else
+		, ( 8, 1, 'B', 'DEFAULT', '2025-01-08') -- bc last record was RESET this DEFAULT now takes precedence
+		, ( 9, 1, 'A', 'IMPORTANT', '2025-01-09') -- IMPORTANT overrides DEFAULT
 )
 , data_with_resets as (
 	select *
@@ -60,14 +60,14 @@ with data (id, document_id, value, precedence_level, updated_at) as (
 )
 , calculate_ranking as (
 	select
-      dense_rank() over (
-        partition by document_id
-        order by
-            (prev_reset_count * 10) +
-            (data.precedence_level = 'IMPORTANT')::int * 5
-                desc
-            , updated_at desc
-        ) as rnk
+		dense_rank() over (
+			partition by document_id
+			order by
+				(prev_reset_count * 10) +
+				(data.precedence_level = 'IMPORTANT')::int * 5
+					desc
+				, updated_at desc
+		) as rnk
 		, *
 	from data_with_resets data
 	order by 1
