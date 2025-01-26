@@ -89,7 +89,7 @@ from final
 ;
 ```
 
-You can play with this query and the parts of it here: https://dbfiddle.uk/HBKDOaR3?highlight=16
+You can play with this query and the parts of it here: [https://dbfiddle.uk/HBKDOaR3?highlight=16](https://dbfiddle.uk/HBKDOaR3?highlight=16)
 
 The key parts that make this work start with the `data_with_resets` CTE. Here we count how many preceding rows are a `RESET` precedence level using a window for the same document ordered by the timestamp. It isn't necessarily obvious from this code unless you are familiar with window functions, but when you use count with a window (the `over` clause) it is a running count up to and including the current row.
 
