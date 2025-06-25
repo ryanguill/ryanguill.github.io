@@ -7,11 +7,11 @@ categories: postgresql sql json
 tags:	postgresql sql json
 ---
 
-# Motivation
+# motivation
 
 At my job recently we had a need to bulk insert lots of records quickly and efficiently, but we had some limitations we needed to work around. We have been using Prisma for a while, which has a `createMany` function to insert multiple rows, but something we have changed or upgraded recently (we aren't sure what exactly) was causing it to actually insert rows one at a time instead. This isn't too big of a deal if you are only inserting a few rows at a time, but we needed to insert hundreds to tens of thousands of rows at a time and doing them one by one wasn't going to cut it.
 
-We have very recently started using [Prisma's typedSQL](https://www.prisma.io/typedsql) functionality to allow us to write real SQL and still get type safety as well, which is great, except it doesn't handle a variable number of parameters.
+We have also very recently started using [Prisma's typedSQL](https://www.prisma.io/typedsql) functionality to allow us to write real SQL and still get type safety as well, which is great, except it doesn't handle a variable number of parameters.
 
 So I had the idea to instead send a single parameter into the statement as JSON, an array of objects, then parse that into a recordset, and use that to insert into the database.
 
