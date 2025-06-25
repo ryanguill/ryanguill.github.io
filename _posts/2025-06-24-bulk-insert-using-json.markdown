@@ -63,7 +63,7 @@ FROM   parsed
 RETURNING *;
 ```
 
-You can try it for yourself here: https://dbfiddle.uk/OCcQtbTi
+You can try it for yourself here: https://dbfiddle.uk/Am4xRgbz
 
 There are only two parts to really understand here:
 
