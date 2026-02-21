@@ -12,8 +12,8 @@ This file tracks site improvements we intend to make, including deferred work.
 
 ### 1) Stabilize local toolchain
 
-- [ ] Add `.ruby-version` and document supported Ruby/Bundler versions.
-- [ ] Ensure `bundle install` works on a clean machine with clear setup docs.
+- [x] Add `.ruby-version` and document supported Ruby/Bundler versions.
+- [x] Ensure `bundle install` works on a clean machine with clear setup docs.
 - [ ] Decide whether to pin Jekyll to an explicit version in `Gemfile`.
 
 ### 2) Move to GitHub Actions deploy flow
@@ -21,7 +21,8 @@ This file tracks site improvements we intend to make, including deferred work.
 - [ ] Add a GitHub Actions workflow to build and deploy the static site.
 - [ ] Build with explicit Jekyll/Bundler versions in CI.
 - [ ] Deploy generated site via Pages action so plugin behavior is predictable.
-- [ ] Keep `master` as source branch unless intentionally changed.
+- [ ] After the CI deploy flow is stable and green, rename the primary branch from `master` to `main`.
+- [ ] During branch rename, walk through required GitHub/repo settings updates and local git updates with user.
 
 ### 3) Resolve archive/tag behavior
 
@@ -43,15 +44,21 @@ This file tracks site improvements we intend to make, including deferred work.
 - [ ] Validate local build before publishing.
 - [ ] Verify canonical URLs, feed links, and metadata on live posts.
 
+### 6) Branch rename (timed)
+
+- [ ] Execute `master` -> `main` rename only after steps 1-4 are complete and deployment is verified.
+- [ ] Update default branch in GitHub settings and confirm Pages/Actions reference the new branch.
+- [ ] Update local branch tracking and any branch-specific docs/scripts.
+
 ## Agent Capability Plan (Required)
 
 Goal: ensure the coding agent can fully maintain and verify this site end-to-end before publish.
 
 ### A) Local execution and preview
 
-- [ ] Make sure agent can install dependencies in this repo.
-- [ ] Make sure agent can run `bundle exec jekyll serve --drafts` locally.
-- [ ] Make sure agent can run `bundle exec jekyll build` locally.
+- [x] Make sure agent can install dependencies in this repo.
+- [x] Make sure agent can run `bundle exec jekyll serve --drafts` locally.
+- [x] Make sure agent can run `bundle exec jekyll build` locally.
 
 ### B) Local verification workflow
 
