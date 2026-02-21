@@ -60,6 +60,9 @@ bundle _2.5.13_ exec jekyll serve --drafts --host 127.0.0.1 --port 4001
 - front matter renders correctly
 - formatting and code blocks look right
 - links work
+- spelling is checked and obvious typos are fixed
+- confusing or convoluted sentences are clarified while preserving writing voice
+- headings use title case, sentences start with a capital letter, and punctuation is present
 
 4. Stop preview server, then commit and push.
 

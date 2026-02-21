@@ -5,6 +5,7 @@ Guidance for AI/code assistants working in this repository.
 ## Conversation Guidance (Global)
 
 - Ask questions any time a prompt is unclear, ambiguous, or when you have concerns/thoughts that could affect the result.
+- If an ask-user-question tool is available, use it for clarification questions so decisions are captured explicitly.
 - If a prompt includes a question or discussion and does not explicitly instruct an action, treat that part as planning mode: answer first and do not execute changes for that part until explicitly directed.
 
 ## Purpose
@@ -95,6 +96,21 @@ Each post should include:
 - Add external links for references/fiddles/gists when useful.
 - Inline HTML is allowed when needed for formatting demos/tables.
 
+### Author voice profile (from existing posts)
+
+When drafting or editing posts, preserve these writing characteristics:
+
+- Start with a concrete real-world problem and practical motivation.
+- Use a conversational, first-person technical tone (clear, direct, and grounded).
+- Explain in progressive layers: context -> core idea -> full implementation -> caveats/tradeoffs.
+- Prefer runnable examples with full SQL/TS snippets over abstract summaries.
+- Teach by decomposition ("here are the key parts", "inside out", step-by-step breakdowns).
+- Include links to references/fiddles/gists so readers can validate and explore.
+- Be transparent about uncertainty and tradeoffs; avoid overstating certainty.
+- Keep conclusions practical: what to apply, when to use it, and why it helps.
+
+Do not rewrite into a different voice. Keep edits minimal and preserve author phrasing unless clarity, accuracy, or correctness requires change.
+
 ---
 
 ## Privacy and Content Safety Policy (Strict)
@@ -162,7 +178,11 @@ For post/content changes, run this sequence before publishing:
 1. `bundle _2.5.13_ exec jekyll build`
 2. `bundle _2.5.13_ exec jekyll serve --drafts --host 127.0.0.1 --port 4001`
 3. Review the affected page(s) in local preview (`http://127.0.0.1:4001`).
-4. Verify formatting, code blocks, links, and front matter render as expected.
+4. Run content QA checks:
+   - Verify formatting, code blocks, links, and front matter render as expected.
+   - Run spell check and fix obvious mistakes.
+   - Run a clarity pass: flag confusing or overly convoluted sentences/paragraphs while preserving author voice.
+   - Apply basic editorial checks: headings in title case, sentences start with a capital letter, and punctuation is present.
 5. Stop local server and proceed to commit/push only after checks pass.
 
 ---
@@ -180,6 +200,7 @@ For post/content changes, run this sequence before publishing:
 ## Editing Guardrails for Assistants
 
 - Preserve existing writing voice and formatting style.
+- For clarity checks, prefer flagging issues and suggesting targeted edits or minimal rewrites rather than broad stylistic rewrites.
 - Treat blog content and resume content as separate concerns; do not edit `resume.html` unless explicitly requested.
 - Do not mass-reformat old posts unless asked.
 - Avoid introducing new site dependencies/plugins without explicit approval.
@@ -196,6 +217,9 @@ Before finalizing a post, verify:
 - Front matter is complete and valid YAML.
 - Categories/tags are intentional and relevant.
 - Code blocks are language-tagged and formatted.
+- Spelling has been reviewed and corrected.
+- Clarity pass completed (confusing or convoluted sections identified/fixed while preserving voice).
+- Basic editorial quality is met (heading capitalization, sentence capitalization, punctuation).
 - External links work and are trustworthy.
 - No confidential data is present.
 - Local Jekyll build succeeds.

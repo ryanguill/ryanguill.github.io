@@ -106,3 +106,21 @@ Goal: ensure the coding agent can fully maintain and verify this site end-to-end
 
 - [ ] Evaluate JS ecosystem migration options (11ty, Astro) with effort estimate.
 - [ ] If migration is chosen, create a separate migration plan and phased rollout.
+
+## Post Drafting Template
+
+Use this structure as a starting point for new posts (adapt as needed):
+
+1. Motivation / real-world problem
+2. Core idea or approach summary
+3. Implementation walkthrough (step-by-step)
+4. Runnable examples (SQL/TS/etc.)
+5. Caveats, tradeoffs, and alternatives
+6. Practical conclusion (when to apply and why)
+
+Authoring notes:
+
+- Keep voice conversational, first-person, and technically grounded.
+- Prefer concrete examples over abstract explanation.
+- Include references (docs, dbfiddle, gist) where useful.
+- Preserve style and phrasing; only make minimal clarity/editorial edits.
