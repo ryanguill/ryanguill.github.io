@@ -14,13 +14,13 @@ This file tracks site improvements we intend to make, including deferred work.
 
 - [x] Add `.ruby-version` and document supported Ruby/Bundler versions.
 - [x] Ensure `bundle install` works on a clean machine with clear setup docs.
-- [ ] Decide whether to pin Jekyll to an explicit version in `Gemfile`.
+- [x] Decide whether to pin Jekyll to an explicit version in `Gemfile`.
 
 ### 2) Move to GitHub Actions deploy flow
 
 - [x] Add a GitHub Actions workflow to build and deploy the static site.
-- [ ] Build with explicit Jekyll/Bundler versions in CI.
-- [ ] Deploy generated site via Pages action so plugin behavior is predictable.
+- [x] Build with explicit Jekyll/Bundler versions in CI.
+- [x] Deploy generated site via Pages action so plugin behavior is predictable.
 - [ ] After the CI deploy flow is stable and green, rename the primary branch from `master` to `main`.
 - [ ] During branch rename, walk through required GitHub/repo settings updates and local git updates with user.
 
@@ -28,9 +28,9 @@ This file tracks site improvements we intend to make, including deferred work.
 
 Cutover (safe sequence):
 
-- [ ] Push workflow and verify at least one successful run on `maint-feb-2026` and `master`.
+- [x] Push workflow and verify at least one successful run on `maint-feb-2026` and `master`.
 - [x] In GitHub repo settings, set Pages source to **GitHub Actions**.
-- [ ] Push a tiny docs-only commit to `master` and verify deployment URL + page content.
+- [x] Push a tiny docs-only commit to `master` and verify deployment URL + page content.
 
 Status note: Pages source was switched to GitHub Actions on 2026-02-21.
 
@@ -53,7 +53,7 @@ Rollback (if anything looks wrong):
 
 ### 4) Dependency and legacy config cleanup
 
-- [ ] Review and modernize `Gemfile` constraints.
+- [x] Review and modernize `Gemfile` constraints.
 - [ ] Keep one analytics strategy only (config-driven).
 - [ ] Review old config entries and remove obsolete options safely.
 
