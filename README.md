@@ -70,3 +70,33 @@ bundle _2.5.13_ exec jekyll serve --drafts --host 127.0.0.1 --port 4001
 
 - Primary branch: `main`
 - Hosting: GitHub Pages via GitHub Actions workflow at `.github/workflows/pages.yml`
+
+## New post planning workflow
+
+- Create a rough-draft planning file:
+
+```bash
+./scripts/new-post-rough-draft "post topic idea"
+```
+
+- Use `.plans/rough-draft/` for brainstorming, interview notes, and outline decisions.
+- Draft publishable content in `_drafts/` once the thesis and structure are stable.
+- See `.plans/workflows/agent-post-workflow.md` for the full process.
+
+## Working with an agent on a new post
+
+After creating a rough-draft file, start with a prompt like this:
+
+```text
+Read `.plans/rough-draft/YYYY-MM-DD-topic-slug.md` and help me turn it into a post.
+First, ask focused clarification questions.
+Then suggest a working brief + outline.
+Once we align, draft/update `_drafts/YYYY-MM-DD-topic-slug.md`.
+Preserve my writing voice and use minimal rewrites for clarity.
+```
+
+Suggested iteration prompts:
+
+- `Expand this section with a concrete SQL example and explain it step-by-step.`
+- `Tighten this draft for clarity without changing my voice.`
+- `Run polish mode: spell check, clarity pass, and editorial checks only.`

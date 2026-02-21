@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ "$#" -lt 1 ]; then
+  echo "Usage: ./scripts/new-post-rough-draft \"topic title\""
+  exit 1
+fi
+
+title="$*"
+date_str="$(date +%F)"
+
+slug="$(printf "%s" "$title" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g')"
+
+if [ -z "$slug" ]; then
+  echo "Could not generate slug from title: $title"
+  exit 1
+fi
+
+dir=".plans/rough-draft"
+template="$dir/_template.md"
+target="$dir/${date_str}-${slug}.md"
+
+if [ ! -f "$template" ]; then
+  echo "Template not found: $template"
+  exit 1
+fi
+
+if [ -e "$target" ]; then
+  echo "File already exists: $target"
+  exit 1
+fi
+
+cp "$template" "$target"
+
+python3 - "$target" "$title" <<'PY'
+from pathlib import Path
+import sys
+
+target = Path(sys.argv[1])
+title = sys.argv[2]
+
+text = target.read_text()
+text = text.replace("__TITLE_PLACEHOLDER__", title)
+target.write_text(text)
+PY
+
+echo "Created: $target"

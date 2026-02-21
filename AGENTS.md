@@ -96,6 +96,19 @@ Each post should include:
 - Add external links for references/fiddles/gists when useful.
 - Inline HTML is allowed when needed for formatting demos/tables.
 
+### Standard drafting workflow (rough draft -> post draft)
+
+When writing a new post with the author, follow this process:
+
+1. Start with a planning file in `.plans/rough-draft/` (use `./scripts/new-post-rough-draft "topic"`).
+2. Read the rough draft and run an interview pass before drafting the post.
+3. Use focused clarification questions (via ask-user-question tool when available).
+4. Propose a working brief and outline in the rough draft file.
+5. Draft/update the actual post in `_drafts/` once thesis and structure are stable.
+6. Iterate in explicit modes: expand, tighten, polish.
+
+The rough draft file is for ideation and decisions; `_drafts/` is for publishable post content.
+
 ### Author voice profile (from existing posts)
 
 When drafting or editing posts, preserve these writing characteristics:
