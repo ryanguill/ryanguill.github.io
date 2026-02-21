@@ -52,14 +52,16 @@ Post-cutover hardening:
 ### 4) Dependency and legacy config cleanup
 
 - [x] Review and modernize `Gemfile` constraints.
-- [ ] Keep one analytics strategy only (config-driven).
-- [ ] Review old config entries and remove obsolete options safely.
+- [x] Keep one analytics strategy only (config-driven).
+- [x] Review old config entries and remove obsolete options safely.
+
+Status note: legacy social `protocols` config and Open Source Protocol meta tags were removed; social preview tags now use `page.cover` -> `site.cover` -> `site.logo` fallback.
 
 ### 5) Publishing standards and checks
 
-- [ ] Keep a lightweight pre-publish checklist.
-- [ ] Validate local build before publishing.
-- [ ] Verify canonical URLs, feed links, and metadata on live posts.
+- [x] Keep a lightweight pre-publish checklist.
+- [x] Validate local build before publishing.
+- [x] Verify canonical URLs, feed links, and metadata on live posts.
 
 ### 6) Branch rename (timed)
 
@@ -90,15 +92,15 @@ Goal: ensure the coding agent can fully maintain and verify this site end-to-end
 
 ### B) Local verification workflow
 
-- [ ] Define a standard local verification flow the agent must run for post changes.
-- [ ] Verify rendered output locally (content, formatting, links, metadata).
-- [ ] Include a local preview step so you can review before publish.
+- [x] Define a standard local verification flow the agent must run for post changes.
+- [x] Verify rendered output locally (content, formatting, links, metadata).
+- [x] Include a local preview step so you can review before publish.
 
 ### C) Operational readiness
 
-- [ ] Document required tools for agent operation (Ruby, Bundler, Jekyll).
-- [ ] Ensure commands are repeatable on this machine.
-- [ ] Keep instructions current in `AGENTS.md` and/or `README.md`.
+- [x] Document required tools for agent operation (Ruby, Bundler, Jekyll).
+- [x] Ensure commands are repeatable on this machine.
+- [x] Keep instructions current in `AGENTS.md` and/or `README.md`.
 
 ## Deferred / Later
 

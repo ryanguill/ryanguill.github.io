@@ -39,3 +39,31 @@ bundle _2.5.13_ exec jekyll serve --drafts
 ```
 
 If you have a local alias, `jserve` is also supported in this setup.
+
+## Pre-publish checklist
+
+Before publishing content changes:
+
+1. Build locally:
+
+```bash
+bundle _2.5.13_ exec jekyll build
+```
+
+2. Run local preview:
+
+```bash
+bundle _2.5.13_ exec jekyll serve --drafts --host 127.0.0.1 --port 4001
+```
+
+3. Review affected pages at `http://127.0.0.1:4001` and verify:
+- front matter renders correctly
+- formatting and code blocks look right
+- links work
+
+4. Stop preview server, then commit and push.
+
+## Deployment notes
+
+- Primary branch: `main`
+- Hosting: GitHub Pages via GitHub Actions workflow at `.github/workflows/pages.yml`
