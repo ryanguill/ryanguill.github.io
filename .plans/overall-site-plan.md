@@ -18,19 +18,36 @@ This file tracks site improvements we intend to make, including deferred work.
 
 ### 2) Move to GitHub Actions deploy flow
 
-- [ ] Add a GitHub Actions workflow to build and deploy the static site.
+- [x] Add a GitHub Actions workflow to build and deploy the static site.
 - [ ] Build with explicit Jekyll/Bundler versions in CI.
 - [ ] Deploy generated site via Pages action so plugin behavior is predictable.
 - [ ] After the CI deploy flow is stable and green, rename the primary branch from `master` to `main`.
 - [ ] During branch rename, walk through required GitHub/repo settings updates and local git updates with user.
 
+#### GitHub Actions cutover + rollback runbook
+
+Cutover (safe sequence):
+
+- [ ] Push workflow and verify at least one successful run on `maint-feb-2026` and `master`.
+- [ ] In GitHub repo settings, set Pages source to **GitHub Actions**.
+- [ ] Push a tiny docs-only commit to `master` and verify deployment URL + page content.
+
+Rollback (if anything looks wrong):
+
+- [ ] In GitHub repo settings, switch Pages source back to **Deploy from a branch**.
+- [ ] Select `master` and `/ (root)` as source.
+- [ ] Disable the Pages workflow (or leave it idle) until issues are fixed.
+- [ ] Push a tiny commit to retrigger the old publish path.
+- [ ] Verify homepage + latest post + feed render correctly.
+
 ### 3) Resolve archive/tag behavior
 
-- [ ] Audit tag/category links rendered on post pages.
-- [ ] Fix dead tag links on production (404 currently).
-- [ ] Pick one approach:
+- [x] Audit tag/category links rendered on post pages.
+- [x] Fix dead tag links on production (404 currently).
+- [x] Pick one approach:
   - keep archive links and ensure generation in CI deploy path, or
   - disable archive links until fully supported.
+  - Current choice: disable tag archive links in post template unless `jekyll-archives` is explicitly enabled in plugins.
 
 ### 4) Dependency and legacy config cleanup
 
