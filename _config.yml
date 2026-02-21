@@ -1,7 +1,8 @@
-# External gems
-gems:
+# External plugins
+plugins:
   #- jekyll-archives # Sorry, not GitHub pages friendly!
   - jekyll-sitemap
+  - jekyll-paginate
 
 exclude:
   - "/vendor/"
@@ -17,7 +18,7 @@ description: >
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://ryanguill.github.io" # the base hostname & protocol for your site
+url: "https://ryanguill.com" # the base hostname & protocol for your site
 cover: "/assets/blog-header-cuttlefish.jpg"
 logo: "/assets/cuttlefish-icon-edit.png"
 
@@ -43,7 +44,7 @@ jekyll-archives:
 disqus_shortname: ryanguill
 
 # Google analytics
-# ga_tracking_id: "UA-XXXX-1"
+ga_tracking_id: "UA-73299-11"
 
 # Category descriptions (for archive pages)
 descriptions:
