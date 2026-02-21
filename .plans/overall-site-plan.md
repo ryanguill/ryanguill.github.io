@@ -29,8 +29,10 @@ This file tracks site improvements we intend to make, including deferred work.
 Cutover (safe sequence):
 
 - [ ] Push workflow and verify at least one successful run on `maint-feb-2026` and `master`.
-- [ ] In GitHub repo settings, set Pages source to **GitHub Actions**.
+- [x] In GitHub repo settings, set Pages source to **GitHub Actions**.
 - [ ] Push a tiny docs-only commit to `master` and verify deployment URL + page content.
+
+Status note: Pages source was switched to GitHub Actions on 2026-02-21.
 
 Rollback (if anything looks wrong):
 
