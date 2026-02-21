@@ -6,6 +6,15 @@ plugins:
 
 exclude:
   - "/vendor/"
+  - "AGENTS.md"
+  - "README.md"
+  - "LICENSE.md"
+  - "circle.yml"
+  - ".plans/"
+  - ".github/"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - ".ruby-version"
 
 # Site settings
 title: TIL
