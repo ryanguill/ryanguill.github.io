@@ -1,5 +1,7 @@
 # ryanguill.com
 
+This repository contains the source code and content for my blog published at `https://ryanguill.com`.
+
 ## Local setup
 
 This repo uses Jekyll with Ruby via Bundler.

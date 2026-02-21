@@ -24,7 +24,7 @@ This file tracks site improvements we intend to make, including deferred work.
 - [x] After the CI deploy flow is stable and green, rename the primary branch from `master` to `main`.
 - [x] During branch rename, walk through required GitHub/repo settings updates and local git updates with user.
 
-#### GitHub Actions cutover + rollback runbook
+#### GitHub Actions cutover checklist
 
 Cutover (safe sequence):
 
@@ -35,13 +35,10 @@ Cutover (safe sequence):
 Status note: Pages source was switched to GitHub Actions on 2026-02-21.
 Status note: Default branch was renamed from `master` to `main` on 2026-02-21.
 
-Rollback (if anything looks wrong):
+Post-cutover hardening:
 
-- [ ] In GitHub repo settings, switch Pages source back to **Deploy from a branch**.
-- [ ] Select `main` and `/ (root)` as source.
-- [ ] Disable the Pages workflow (or leave it idle) until issues are fixed.
-- [ ] Push a tiny commit to retrigger the old publish path.
-- [ ] Verify homepage + latest post + feed render correctly.
+- [x] Remove `master` from `github-pages` environment deployment branch policies.
+- [x] Keep only `main` allowed for deploy to `github-pages` environment.
 
 ### 3) Resolve archive/tag behavior
 
@@ -69,6 +66,17 @@ Rollback (if anything looks wrong):
 - [x] Execute `master` -> `main` rename only after steps 1-4 are complete and deployment is verified.
 - [x] Update default branch in GitHub settings and confirm Pages/Actions reference the new branch.
 - [x] Update local branch tracking and any branch-specific docs/scripts.
+- [x] Delete remote `master` branch after confirming stable deploy from `main`.
+
+## Incident Recovery Notes
+
+If deployments fail in the future and need emergency rollback:
+
+- [ ] In GitHub repo settings, switch Pages source back to **Deploy from a branch**.
+- [ ] Select `main` and `/ (root)` as source.
+- [ ] Disable the Pages workflow (or leave it idle) until issues are fixed.
+- [ ] Push a tiny commit to retrigger the old publish path.
+- [ ] Verify homepage + latest post + feed render correctly.
 
 ## Agent Capability Plan (Required)
 

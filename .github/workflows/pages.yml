@@ -3,7 +3,6 @@ name: Deploy Jekyll site to Pages
 on:
   push:
     branches:
-      - maint-feb-2026
       - main
   workflow_dispatch:
 
