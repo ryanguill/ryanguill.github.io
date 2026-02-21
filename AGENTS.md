@@ -2,6 +2,11 @@
 
 Guidance for AI/code assistants working in this repository.
 
+## Conversation Guidance (Global)
+
+- Ask questions any time a prompt is unclear, ambiguous, or when you have concerns/thoughts that could affect the result.
+- If a prompt includes a question or discussion and does not explicitly instruct an action, treat that part as planning mode: answer first and do not execute changes for that part until explicitly directed.
+
 ## Purpose
 
 This repository powers a personal blog hosted on GitHub Pages and built with Jekyll.
