@@ -91,7 +91,7 @@ After creating a rough-draft file, start with a prompt like this:
 Read `.plans/rough-draft/YYYY-MM-DD-topic-slug.md` and help me turn it into a post.
 First, ask focused clarification questions.
 Then suggest a working brief + outline.
-Once we align, draft/update `_drafts/YYYY-MM-DD-topic-slug.md`.
+Once we align, draft/update `_drafts/YYYY-MM-DD-topic-slug.md`, using today's date for the draft filename (the date we create the draft), not necessarily the rough-draft file date.
 Preserve my writing voice and use minimal rewrites for clarity.
 ```
 
