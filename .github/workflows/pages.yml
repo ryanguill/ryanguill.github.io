@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - maint-feb-2026
-      - master
       - main
   workflow_dispatch:
 
@@ -43,7 +42,7 @@ jobs:
           path: _site
 
   deploy:
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:

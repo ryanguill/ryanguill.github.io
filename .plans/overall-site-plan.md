@@ -21,8 +21,8 @@ This file tracks site improvements we intend to make, including deferred work.
 - [x] Add a GitHub Actions workflow to build and deploy the static site.
 - [x] Build with explicit Jekyll/Bundler versions in CI.
 - [x] Deploy generated site via Pages action so plugin behavior is predictable.
-- [ ] After the CI deploy flow is stable and green, rename the primary branch from `master` to `main`.
-- [ ] During branch rename, walk through required GitHub/repo settings updates and local git updates with user.
+- [x] After the CI deploy flow is stable and green, rename the primary branch from `master` to `main`.
+- [x] During branch rename, walk through required GitHub/repo settings updates and local git updates with user.
 
 #### GitHub Actions cutover + rollback runbook
 
@@ -33,11 +33,12 @@ Cutover (safe sequence):
 - [x] Push a tiny docs-only commit to `master` and verify deployment URL + page content.
 
 Status note: Pages source was switched to GitHub Actions on 2026-02-21.
+Status note: Default branch was renamed from `master` to `main` on 2026-02-21.
 
 Rollback (if anything looks wrong):
 
 - [ ] In GitHub repo settings, switch Pages source back to **Deploy from a branch**.
-- [ ] Select `master` and `/ (root)` as source.
+- [ ] Select `main` and `/ (root)` as source.
 - [ ] Disable the Pages workflow (or leave it idle) until issues are fixed.
 - [ ] Push a tiny commit to retrigger the old publish path.
 - [ ] Verify homepage + latest post + feed render correctly.
@@ -65,9 +66,9 @@ Rollback (if anything looks wrong):
 
 ### 6) Branch rename (timed)
 
-- [ ] Execute `master` -> `main` rename only after steps 1-4 are complete and deployment is verified.
-- [ ] Update default branch in GitHub settings and confirm Pages/Actions reference the new branch.
-- [ ] Update local branch tracking and any branch-specific docs/scripts.
+- [x] Execute `master` -> `main` rename only after steps 1-4 are complete and deployment is verified.
+- [x] Update default branch in GitHub settings and confirm Pages/Actions reference the new branch.
+- [x] Update local branch tracking and any branch-specific docs/scripts.
 
 ## Agent Capability Plan (Required)
 

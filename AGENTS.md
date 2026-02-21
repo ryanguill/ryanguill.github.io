@@ -23,7 +23,7 @@ Primary assistant responsibilities are:
 
 - **Site type:** Jekyll static site
 - **Hosting:** GitHub Pages (repository: `ryanguill/ryanguill.github.io`)
-- **Primary branch:** `master` (current default branch)
+- **Primary branch:** `main` (current default branch)
 - **Custom domain:** `ryanguill.com` via `CNAME`
 - **Build tooling:** Bundler + Jekyll (`bundle exec jekyll ...`)
 - **Theme/layout:** Custom layouts/includes in `_layouts` and `_includes`
@@ -160,7 +160,7 @@ Run build checks before publishing content changes.
 1. Write/edit post in `_posts/` (or finalize from `_drafts/`).
 2. Verify front matter and links.
 3. Run local build and resolve issues.
-4. Commit and push to `master`.
+4. Commit and push to `main`.
 5. Verify live post rendering, RSS visibility, and metadata after deployment.
 
 ---
