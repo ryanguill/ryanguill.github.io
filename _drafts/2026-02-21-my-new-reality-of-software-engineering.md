@@ -1,0 +1,86 @@
+---
+layout: post
+title: "My New Reality of Software Engineering"
+date: 2026-02-21 12:00:00
+author: Ryan Guill
+categories: software-engineering ai
+tags: software-engineering ai llm agents productivity
+---
+
+# a career that suddenly changed
+
+I have been a software engineer for more than twenty years. Looking back, it's amazing how many things have changed in that time, and how many things have not. But what has happened in the last year, especially the last six months, has created a fundamental shift in how I work, how I think, how much I produce, and really what it even means to be a software engineer.
+
+I was lucky, I think, to have always known that I wanted to write software as a career. I knew I wanted to work with computers from the moment I heard about them, before I ever actually touched one. When I was around six, my parents got me a VTech PreComputer 1000, a simple device that had math and geography quizzes, a very non-standard terrible keyboard, and a single 20-character dot matrix LCD display. But it had a mode where you could write BASIC, and it came with a spiral notebook that gave you a little information about how it worked. Writing line numbers when you could only see a single line at a time was quite the challenge, but I spent hours writing programs in that thing. Worse yet, it did not have any non-volatile storage, so if you turned the power off, your program was gone. That did not stop me from writing the programs over and over again, debugging and playing with it for hours at a time. I made computer monitors, cases, and keyboards out of cardboard boxes and markers, just to pretend.
+
+[TODO: add image of a VTech PreComputer 1000 directly below this paragraph and link to https://en.wikipedia.org/wiki/VTech_PreComputer_1000]
+
+[AGENT PROPOSAL:] I can still remember the weird keyboard feel and the tiny screen fighting me on every line, but none of that mattered because it was mine. I could make it do something that did not exist a minute earlier. That feeling, more than any specific language or framework, is the thread that runs through my entire career.
+
+The idea that I could make this thing do things was so empowering and enchanting for me. Like actual magic spells that brought my whims to reality. And there was always this intertwined tension between wanting to learn the languages, the patterns, and better, more efficient ways to write the code, and the actual production of the thing I was trying to build. Both brought me so much joy.
+
+And it has been that way for my entire career. I have loved the actual writing of the code, the sound of my hands on the keyboard, the diffs in version control, but more importantly the problem-solving challenge and the problems I was solving for my users and customers. I was making lives easier, bringing joy to other people, or making them and me money. But it always required me to do all of the work: understanding the problem, challenge, or pain point; coming up with a solution; making that solution a reality; debugging existing code; building; testing; iterating; showing it to other people; and getting it into production.
+
+And now we have these LLMs that can help. I was at my current job when ChatGPT was first released. It was such a novelty at first, then we started getting scared that our jobs were over. Then we settled into the reality that while these things were cool, they had major limitations. They hallucinated. They could not keep much information in context. There was no way they were going to be able to handle our hundred-thousand-line codebases. We were thinking about their knowledge cutoffs, figuring out how they might be useful, and some of us were imagining a future where they could do so much more, but that was not reality and was not near term.
+
+[AGENT NOTE: This paragraph is strong, but if you want a tighter final cut, you could trim one sentence from the middle without losing meaning.]
+
+And slowly but surely things improved. We got new models. We got new tools that could use them. When I started at my current job, we had lots of challenges where we needed to do something at a scale that would mean hiring dozens, if not hundreds, of people if we wanted to do it fully and repeatedly. There was no way we could hire that many people, much less manage them. But we started building toward that future, thinking that one day this might be possible.
+
+Then Claude Code came out. We started playing with it, and it was great, but a very different way of working. Sonnet 3 came out, and it was too expensive to spend too much time in, but we used it more and more. More new models came out, we gave them a little more to do, but still I was writing the majority of the code, just using them for parts that were obvious and routine. Then, in the middle of last year, Sonnet 4 came out. The climate started to change. People started saying it could do so much more. I decided to start using it a lot more, letting it write the code maybe 75% of the time. I was still using things like Cursor tab completion and writing large blocks of code myself, but I slowly gave it more and more. I was working on large-scale systems, some from scratch, some existing. Large, ambitious projects, the kinds of things I love and am really known for. Architecture-level things. And it was handling it all. It could answer my questions, give me ideas, challenge my plans, and then execute on them.
+
+And then, in the last month, Opus 4.6 and then Codex 5.3 came out. My CTO put out a memo to everyone that we should not be writing most of the code anymore, we should be using the agents. They are smart enough, fast enough, thorough enough. Good enough. I had already decided to try and go all in. I was a little relieved when the memo came out. I was also a little worried someone was going to come talk to me about how much money I was spending.
+
+So now I have not written more than a dozen lines of code by hand in the last month. Codex writes my code, helps me plan, manages git, creates my commits, pushes my PRs, responds to review comments and addresses them, manages my stories, just about everything. I am shipping more than ever, getting more done than ever, while writing virtually no code to do it. I am talking to an agent like I would talk to a colleague in Slack. I am writing in languages that I am not nearly as fluent in. It does not matter. I am still shipping quality code that does the job as well as if written by an expert in those languages. It is a whole new world.
+
+# the new reality
+
+In some ways, this world has changed so fast, and in other ways it happened slowly enough that you could start thinking and planning for it if you were paying attention. I told someone a year ago that before long it will be like we are all engineering managers with full teams of employees. That is really the way I feel now.
+
+But this reality is not evenly distributed. At my job, and in my social feed, we are in a bubble. We are in many ways on the bleeding edge, consuming this like a firehose, jumping from tool to tool and model to model and trying our hardest to learn the new meta as soon as it comes out, and we still cannot keep up. We are pushing it as far as it will go, and there are still gaps and holes, but we can see a future coming where many of those problems are solved.
+
+At the same time, there are many software engineers in the world who are still working like they did last year and the twenty years before, probably very happy to keep doing things that way. I am partially writing this to tell them they will have to confront this new reality because it is coming whether they like it or not. You might be able to last another six months, or a year. In some niche pockets maybe longer. But five years from now the software engineering landscape will look completely different. Expectations of how and what you can produce will completely change.
+
+[REWORK: tighten this paragraph so it sounds less like a warning and more like a grounded forecast while keeping the conviction.]
+
+[AGENT PROPOSAL:] I do not think everyone has to change overnight, and I do not think every team will move at the same speed. But the direction is hard to ignore. As tools get cheaper, faster, and more reliable, teams that adopt them well will compound output, and that will gradually reset what "normal" looks like across the industry.
+
+Whenever I interview for my next job, right after we talk about compensation and benefits, one of my biggest questions will be my inference budget and flexibility of agent tooling.
+
+[TODO: expand this into a short paragraph explaining what this question signals about team maturity and what kind of environment you want to work in.]
+
+[AGENT PROPOSAL:] That question tells me almost everything I need to know. If a company has no clear answer on inference budget, tooling access, or where agents are allowed in the workflow, it usually means they are still treating this as a side experiment. I want to work where this is an operating model, not a novelty, and where people are actively designing process around it instead of pretending nothing has changed.
+
+There will also be many new problems, mostly social and around the software engineering process, that we will have to figure out. Things that were the bottlenecks before will not be, and new bottlenecks will crop up.
+
+There is something important here that I have been trying to articulate: in twenty years, we have learned new tech, new frameworks, and new languages, but fundamentally the things we had to do and the way we had to work stayed mostly the same. This shift is different. This is not just another tool upgrade. This is a phase shift in the job.
+
+# my suggestions for how to get started and how to think about using agents as software devs
+
+If you are curious but still uncomfortable, I think the answer is not "go all in tomorrow" and not "ignore this for a year." The answer is staged adoption. Start with small, low-risk tasks where the blast radius is tiny. Ask the agent to do one contained change. Review the diff. Run tests. See what it got right, what it missed, and where your instructions were vague. Then do it again.
+
+[AGENT NOTE: This is a great practical opener. If you want to make it even more actionable, you could add one specific "first task" example sentence.]
+
+The biggest unlock for me was moving from ask mode to explicit planning. Before any moderate change, have the agent produce a plan first. Then force it to ask clarifying questions until there is no ambiguity. I often tell it to be relentless about questions, assumptions, and edge cases. You can go one step further and ask a second agent, with no context, to review the plan and challenge it. That extra pass catches surprising gaps.
+
+If you only take one practical step this week, make it this: write a strong `AGENTS.md` for your repo. Put your conventions, architecture constraints, testing commands, lint/build workflow, and gotchas in one place. Treat it like living documentation for how work gets done. Every time the agent goes wrong in a repeatable way, update the file so it is less likely to make the same mistake again.
+
+Trust builds from repetition, not from one impressive demo. At first, keep your hand on the wheel for anything that touches external systems: deploys, migrations, production settings, billing surfaces. Over time, as results become predictable, you can delegate more of the full loop: branch setup, implementation, tests, commits, PR creation, review response, and cleanup. The goal is not blind trust. The goal is reliable delegation with verification.
+
+One mindset shift helped me a lot: judge this workflow by shipping outcomes, not by how much code you personally typed. I still care about code quality and design choices, but I spend less energy on the bookkeeping around changes. That lowers the activation energy for all the little improvements we used to postpone forever. Tech debt gets burned down. Side quests that never seemed worth the overhead actually get done.
+
+[TODO: add one concrete anonymized "main quest + side quests" example from your current day-to-day to make this section feel less abstract.]
+
+[AGENT PROPOSAL:] A normal day for me now might look like this: one core project I am driving end to end, plus several smaller improvements running in parallel that would have sat in the backlog before. While I am reviewing architecture decisions on the main thread, an agent can be tightening tests in one area, fixing a flaky edge case in another, and preparing a cleanup PR for a naming inconsistency we have ignored for months. None of those tasks are individually hard. They were just never worth the setup cost before.
+
+You do not have to stop being an engineer to use this model. You still own the problem framing, architecture decisions, constraints, and quality bar. You are still accountable for what ships. The difference is that execution becomes collaborative and parallel. In practice, that means you can do more at once, if your team can absorb the review load and process throughput that comes with it.
+
+If you are a software engineer because you like typing on the keyboard, writing the actual code, and thinking about the control flow of the program through each successive line in a file, this sucks. It does. I certainly think I am one of those people. I have softened my attachment to the actual code over the last decade of working in startups, but I have always cared deeply about not just the outcome but also the formatting, organization, and elegance of the code I produced. I tried to leave code better than I found it with every PR. I cared deeply about names, had debates about comments, fought in tabs-vs-spaces holy wars. I had opinions on the aesthetics of files. I am not happy about leaving that behind. I worry that my ability to read and write code will languish over time, and that somehow that will affect my ability to reason about software itself.
+
+But if you care about solving problems and shipping, this might be the best thing that has ever happened. In so many jobs in my career I advocated for our tech-debt column in the project management system. There were so many things we wanted to do but could not find the time for. There was never enough time, never enough people to get everything done. We needed to ship the new feature, fix the priority bug, and do the next thing. Going back to maintain old code, or make that improvement, was something you only got to do if you were lucky or you snuck it in. We can do those things now. Most of the time those things were not difficult. They did not need a genius to implement. They required time we did not have.
+
+Now you can give your intent and constraints to an agent that can do those things for you, including a lot of the bookkeeping around the change that used to make it not worth it. How many times have you looked at what would be a change of only a few lines and chosen not to do it because those few lines were actually hours of work when you considered making the story, creating the branch, writing the tests, creating the PR, asking for reviews, iterating on review comments, and deploying it? Those things are materially easier now.
+
+At the end of the day, we are paid for the things we ship. Shipping has to be the goal. It has been great for the past twenty years that I have been paid to do this thing I love because I was shipping value to customers, but it was the value I was paid for, not the symbols I wrote. I will mourn the loss of artisanal hand-written code.
+
+When I am really honest with myself, though, I am happiest when I am productive. That is such a hard word to define, almost an emotion. But when I go to bed at night, I feel best when I feel successful at getting something new out into the world, a desire made into reality. The mechanics of doing that gave me pleasure, but that was never the thing that mattered most. What matters is shipping.

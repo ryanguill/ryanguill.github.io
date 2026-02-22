@@ -8,6 +8,16 @@ Guidance for AI/code assistants working in this repository.
 - If an ask-user-question tool is available, use it for clarification questions so decisions are captured explicitly.
 - If a prompt includes a question or discussion and does not explicitly instruct an action, treat that part as planning mode: answer first and do not execute changes for that part until explicitly directed.
 
+### Collaboration Preferences (Author-Specific)
+
+- When turning rough notes into a draft, preserve the author's existing wording and paragraph structure as the default.
+- Prefer light edits first (spelling, punctuation, grammar, small clarity fixes) before attempting larger rewrites.
+- Do not convert prose sections into lists/bullets unless explicitly requested.
+- If proposing new text for missing sections, prepend each proposed paragraph with `[AGENT PROPOSAL:]`.
+- If leaving advisory feedback inline, use `[AGENT NOTE: ...]` after the relevant paragraph.
+- Keep placeholders visible when requested, using explicit markers like `[TODO: ...]` and `[REWORK: ...]`.
+- Default workflow for new posts: iterate in `.plans/rough-draft/` first; only create `_drafts/` content when explicitly requested.
+
 ## Purpose
 
 This repository powers a personal blog hosted on GitHub Pages and built with Jekyll.
