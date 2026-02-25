@@ -49,8 +49,15 @@ In some ways this feels a bit like when source control was a new thing. When Sub
 
 There will also be many new problems, mostly social and around the software engineering process, that we will have to figure out. Things that were the bottlenecks before will not be, and new bottlenecks will crop up. Some examples: when you are working with an LLM that doesn't get tired or frustrated easily, you tend to do more, and are more ambitious about the projects you pick up. Our average PR size has grown, making reviews difficult. We have to try and remember to keep things smaller. The review burden has grown, not just added lines - we are adding new features constantly, but also taking the time to remove the deprecated or legacy stuff we don't need anymore, things that were a burden to take on before. We are pushing much harder on the product team, they used to have more ideas than we had capacity to execute on. Now sometimes they're struggling to keep up. And just the psychological difference between writing code and reading and reviewing code has become much more pronounced. They take different parts of your brain, and honestly you might get tired quicker. The context switching is easier than it was before, but it still takes its toll.
 
+I don't want to give you the wrong impression - LLMs aren't perfect, this new world isn't without consequences; this isn't some new utopia. That is part of what i'm trying to tell you, why I believe its time to start paying attention if you haven't been. There is going to be a shift in many parts of this job that we've taken for granted so far, and we have to start coming to terms with them. There may be less demand for software engineers in the future. Certainly I am concerned about junior developer positions, and therefore the future software engineers. I believe many businesses are going to be disrupted by these changes. The economics are changing, the expectations of what software is, who can build it, how quickly new features come out are all going to change drastically. I don't personally believe this is the death of SaaS, but it is true that some customers who can't find software that completely fits their needs might choose to build vs buy more often.
 
-# my suggestions for how to get started and how to think about using agents as software devs
+Also, the agents will make mistakes. You'll have to be dilligent to catch them. Tests and code reviews and actual QA on your part continues to be as important as ever. The agent might write a few thousand lines of code and you'll realize that its gone off the rails and you'll have to throw it all away and try again. Frequent commits will help. You'll have situations where you weren't specific enough or the agent misunderstands you and it goes and does the wrong thing. You'll tell it to fix a failing unit test and it will delete the unit test ("fixed the glitch" office space style).
+
+These are all things you'll have to navigate and get comfortable with and learn how to avoid. But - its worth it, and it's time to learn these skills.
+
+It's also important to realize that not everyone is working on the same kinds of things. The devs building frontends and webapps don't have the same needs as the devs building operating systems - and they will not have the same experience with the agents. When you hear someone saying the agents don't work well for them don't assume that it applies to you the same way.
+
+# My suggestions for how to get started
 
 I want to tell you that it's ok if you haven't tried these things yet, or are still using agents in an IDE or tab completion, thats fine. If you've thought that this stuff is changing too fast and have wanted some dust to settle before investing it it, thats fair. If you've tried these agents in the past and were disappointed, I understand. But its time to try again. Things have changed. Theyre going to continue to change (more on that later), but they're truely good enough to really put to work and a worthwile investment of your time at this point.
 
@@ -70,6 +77,8 @@ I'll give you an example. Recently my main goal at work has been creating a larg
 
 You do not have to stop being an engineer to use this model. You still own the problem framing, architecture decisions, constraints, and quality bar. You are still accountable for what ships. You still need to read every line of code it produces. The difference is that execution becomes collaborative and parallel. In practice, that means you can do more at once, if your team can absorb the review load and process throughput that comes with it.
 
+# Mourning the loss
+
 If you are a software engineer because you like typing on the keyboard, writing the actual code, and thinking about the control flow of the program through each successive line in a file, this sucks. It does. I certainly think I am one of those people. I have softened my attachment to the actual code over the last decade of working in startups where the usefulness of the thing I write might not last long as we try to find the elusive product market fit, but I have always cared deeply about not just the outcome but also the formatting, organization, and elegance of the code I produced. I tried to leave code better than I found it with every PR. I cared deeply about names, had debates about comments, fought in tabs-vs-spaces holy wars. I had opinions on the aesthetics of files. I am not happy about leaving that behind. I worry that my ability to read and write code will languish over time, and that somehow that will affect my ability to reason about software itself.
 
 But if you care about solving problems and shipping, this might be the best thing that has ever happened. In so many jobs in my career I advocated for spending time on our tech-debt column in the project management system. There were so many things we wanted to do but could not find the time for. There was never enough time, never enough people to get everything done. We needed to ship the new feature, fix the priority bug, and do the next thing. Going back to maintain old code, or make that improvement, was something you only got to do if you were lucky or you snuck it in. We can do those things now. Most of the time those things were not difficult. They did not need a genius to implement. They required time we did not have.
@@ -82,10 +91,8 @@ When I am really honest with myself, though, I am happiest when I am productive.
 
 [AGENT PROPOSAL: So my practical recommendation is simple: start small, be explicit, require plans and questions, document your rules, and gradually expand delegation. You will find your own edge of comfort. Then push it a little farther each week.]
 
-[todo: its not all sunshine and roses. There are sharp edges, things are changing fast]
 something about it was fine if you didnt do it before now, but nows the time to start paying attention. Things are still going to change a lot, but just now is the time where the models have truely gotten good enough to prove that theyre going to be around, and useful today for getting work done.
 
 cost is a concern, heres what you can do.
-not everyone is working on the same things
 five stages of grief
 signal vs noise on social
