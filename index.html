@@ -14,7 +14,8 @@ layout: default
 
 <div class="wrapper">
 <ul class="post-list">
-  {% for post in paginator.posts %}
+  {% assign visible_posts = paginator.posts | where_exp: "post", "post.unlisted != true" %}
+  {% for post in visible_posts %}
   <li>
     <h2>
       <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>

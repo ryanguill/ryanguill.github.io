@@ -269,6 +269,11 @@ pre code.hljs {
 		}
 		.post-content {
 			padding: 1em 0;
+			.twitter-tweet,
+			.twitter-tweet-rendered {
+				margin-left: auto !important;
+				margin-right: auto !important;
+			}
 		}
 		.tags {
 			font-size: 0.9em;
