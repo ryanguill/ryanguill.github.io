@@ -13,7 +13,8 @@ permalink: /posts/
     {% endif %}
   {% endfor %}
   <ul class="posts-list">
-  {% for post in site.categories[cat] %}
+  {% assign visible_posts = site.categories[cat] | where_exp: "post", "post.unlisted != true" %}
+  {% for post in visible_posts %}
     <li>
       <strong>
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
