@@ -1,13 +1,11 @@
 ---
 layout: post
 title: "My New Reality of Software Engineering"
-date: 2026-02-28 12:00:00
+date: 2026-03-02 12:00:00 -0600
 permalink: /software-engineering/ai/2026/03/02/my-new-reality-of-software-engineering.html
 author: Ryan Guill
 categories: software-engineering ai
 tags: software-engineering ai llm agents productivity
-unlisted: true
-sitemap: false
 ---
 
 # My New Reality of Software Engineering
