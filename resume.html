@@ -18,9 +18,29 @@ permalink: /resume/
 			margin-left: 15px;
 			padding-left: 10px;
 		}
+		.resume-page-switcher {
+			position: fixed;
+			top: 4.75rem;
+			right: 1rem;
+			z-index: 10;
+			padding: 0.45rem 0.7rem;
+			border: 1px solid #b8c2cc;
+			border-radius: 4px;
+			background: white;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+			font-size: 0.9rem;
+			font-weight: 600;
+		}
+		@media print {
+			.resume-page-switcher {
+				display: none;
+			}
+		}
 	</style>
 </head>
-<body><div class="container"><h1 id="mark-ryan-guill">Ryan Guill</h1>
+<body>
+<a class="resume-page-switcher" href="/resume/one-page/">One-page resume</a>
+<div class="container"><h1 id="mark-ryan-guill">Ryan Guill</h1>
 
 <p>(901) 634-3863 / ryanguill at gmail dot com</p>
 

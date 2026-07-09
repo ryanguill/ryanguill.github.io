@@ -1,0 +1,323 @@
+---
+layout: page
+title: One-Page Resume
+permalink: /resume/one-page/
+main_nav: false
+---
+
+<style>
+	.one-page-switcher {
+		position: fixed;
+		top: 4.75rem;
+		right: 1rem;
+		z-index: 10;
+		padding: 0.45rem 0.7rem;
+		border: 1px solid #b8c2cc;
+		border-radius: 4px;
+		background: white;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+		font-size: 0.9rem;
+		font-weight: 600;
+	}
+
+	.recruiter-resume {
+		box-sizing: border-box;
+		max-width: 8.5in;
+		margin: 0 auto;
+		padding: 0.42in 0.48in;
+		background: #fff;
+		color: #17212b;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 9.6pt;
+		line-height: 1.25;
+	}
+
+	.recruiter-resume * {
+		box-sizing: border-box;
+	}
+
+	.recruiter-resume header {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		align-items: end;
+		gap: 0.25in;
+		padding-bottom: 0.09in;
+		border-bottom: 2px solid #253f56;
+	}
+
+	.recruiter-resume h1 {
+		margin: 0;
+		color: #17212b;
+		font-size: 23pt;
+		line-height: 1;
+	}
+
+	.recruiter-resume .positioning {
+		margin-top: 0.05in;
+		color: #365c76;
+		font-size: 10.25pt;
+		font-weight: 700;
+	}
+
+	.recruiter-resume .contact {
+		text-align: right;
+		font-size: 8.5pt;
+		line-height: 1.35;
+	}
+
+	.recruiter-resume .contact a {
+		color: #17212b;
+	}
+
+	.recruiter-resume section {
+		margin-top: 0.105in;
+	}
+
+	.recruiter-resume h2 {
+		margin: 0 0 0.045in;
+		padding-bottom: 0.025in;
+		border-bottom: 1px solid #9aabb8;
+		color: #253f56;
+		font-size: 10pt;
+		line-height: 1.1;
+		text-transform: uppercase;
+	}
+
+	.recruiter-resume p {
+		margin: 0;
+	}
+
+	.recruiter-resume .expertise {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.035in 0.16in;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.recruiter-resume .expertise li {
+		margin: 0;
+	}
+
+	.recruiter-resume .role {
+		margin-top: 0.08in;
+	}
+
+	.recruiter-resume .role:first-of-type {
+		margin-top: 0;
+	}
+
+	.recruiter-resume .role-heading {
+		display: flex;
+		justify-content: space-between;
+		gap: 0.15in;
+		font-size: 9.4pt;
+	}
+
+	.recruiter-resume .role-heading strong {
+		font-size: 10pt;
+	}
+
+	.recruiter-resume .role-meta {
+		flex: 0 0 auto;
+		font-weight: 600;
+		white-space: nowrap;
+	}
+
+	.recruiter-resume .titles {
+		margin-top: 0.015in;
+		color: #40515f;
+		font-size: 8.5pt;
+		font-style: italic;
+	}
+
+	.recruiter-resume ul.impact {
+		margin: 0.035in 0 0 0.16in;
+		padding: 0;
+	}
+
+	.recruiter-resume ul.impact li {
+		margin: 0 0 0.025in;
+		padding-left: 0.015in;
+	}
+
+	.recruiter-resume .earlier-role {
+		display: grid;
+		grid-template-columns: 1.65in 1fr auto;
+		gap: 0.12in;
+		margin-top: 0.035in;
+	}
+
+	.recruiter-resume .earlier-role span:last-child {
+		white-space: nowrap;
+	}
+
+	@media screen {
+		.recruiter-resume {
+			box-shadow: 0 3px 18px rgba(0, 0, 0, 0.16);
+		}
+	}
+
+	@media (max-width: 700px) {
+		.one-page-switcher {
+			position: static;
+			display: inline-block;
+			margin-bottom: 1rem;
+		}
+
+		.recruiter-resume {
+			padding: 1rem;
+		}
+
+		.recruiter-resume header,
+		.recruiter-resume .expertise,
+		.recruiter-resume .earlier-role {
+			display: block;
+		}
+
+		.recruiter-resume .contact {
+			margin-top: 0.75rem;
+			text-align: left;
+		}
+
+		.recruiter-resume .expertise li,
+		.recruiter-resume .earlier-role span {
+			display: block;
+			margin-bottom: 0.2rem;
+		}
+	}
+
+	@page {
+		size: letter;
+		margin: 0;
+	}
+
+	@media print {
+		html,
+		body {
+			width: 8.5in;
+			margin: 0 !important;
+			padding: 0 !important;
+			background: #fff !important;
+		}
+
+		.navigation,
+		.site-header,
+		.site-footer,
+		.post-header,
+		.page-divider,
+		.one-page-switcher {
+			display: none !important;
+		}
+
+		.page-content,
+		.page-content .wrapper,
+		.page,
+		.post-content {
+			width: auto !important;
+			max-width: none !important;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+
+		.recruiter-resume {
+			width: 8.5in;
+			height: auto;
+			margin: 0;
+			padding: 0.42in 0.48in;
+			box-shadow: none;
+			print-color-adjust: exact;
+			-webkit-print-color-adjust: exact;
+		}
+
+		.recruiter-resume a {
+			text-decoration: none;
+		}
+	}
+</style>
+
+<a class="one-page-switcher" href="/resume/">Full resume</a>
+
+<article class="recruiter-resume">
+	<header>
+		<div>
+			<h1>Ryan Guill</h1>
+			<div class="positioning">Staff+ Engineer | Backend, Data, and AI-Integrated Systems</div>
+		</div>
+		<div class="contact">
+			<div>Memphis, TN | Remote only</div>
+			<div>(901) 634-3863 | ryanguill at gmail dot com</div>
+			<div><a href="https://ryanguill.com">ryanguill.com</a> | <a href="https://www.linkedin.com/in/ryan-guill-92034a1/">LinkedIn</a></div>
+		</div>
+	</header>
+
+	<section>
+		<h2>Summary</h2>
+		<p>Staff Software Engineer with 20+ years designing and shipping production systems across startups and growth-stage companies. Turns ambiguous, high-impact problems into right-sized backend, data, and AI-integrated platforms. Deep experience in relational data modeling, AWS serverless architecture, PostgreSQL, agent workflows, and hands-on technical leadership.</p>
+	</section>
+
+	<section>
+		<h2>Core Expertise</h2>
+		<ul class="expertise">
+			<li><strong>Architecture:</strong> distributed and event-driven systems</li>
+			<li><strong>Data:</strong> PostgreSQL, Snowflake, SQL, data modeling</li>
+			<li><strong>AI:</strong> LLM platforms, agents, evaluation, human review</li>
+			<li><strong>Cloud:</strong> AWS Lambda, EventBridge, SQS, S3, CDK</li>
+			<li><strong>Languages:</strong> TypeScript, Python, SQL</li>
+			<li><strong>Leadership:</strong> technical strategy, mentoring, execution</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Experience</h2>
+
+		<div class="role">
+			<div class="role-heading">
+				<strong>Vendr, Inc. | Remote</strong>
+				<span class="role-meta">Nov 2022 - Present</span>
+			</div>
+			<div class="titles">Staff Software Engineer; Engineering Manager; Team Lead; Senior Software Engineer</div>
+			<ul class="impact">
+				<li>Designed and deployed VIBE, an LLM-powered document extraction platform that processed over 300k documents into over 1M field-level extractions used across product, operations, data science, and negotiation workflows.</li>
+				<li>Built an event-driven AWS Lambda and EventBridge architecture that evolved to support supplier-specific processing and selective human review without major rework; reduced processing from a sub-10-minute target to roughly 90 seconds for most documents.</li>
+				<li>Co-inventor on U.S. Patent No. 12,586,403, "Systems and Methods for Automated Data Extraction of Unstructured Documents."</li>
+				<li>Led data modeling and architecture for SaaS catalog and pricing intelligence systems spanning 16k+ active companies and 28k+ products.</li>
+				<li>Designed agent-driven, human-reviewed data workflows and a pull-request-style system for safely evaluating and executing changes to production data.</li>
+				<li>Managed the technical relationship with extraction partner Extend, influenced vendor product direction, and led a cross-functional team that scaled into three specialized teams.</li>
+				<li>Retained through Vendr's 2026 acquisition by Vertice as a subject matter expert for acquired technology and data assets I helped develop.</li>
+			</ul>
+		</div>
+
+		<div class="role">
+			<div class="role-heading">
+				<strong>Hagerty MotorsportReg | Remote</strong>
+				<span class="role-meta">Jan 2016 - Nov 2022</span>
+			</div>
+			<div class="titles">Senior Software Engineer / Team Lead</div>
+			<ul class="impact">
+				<li>Joined as employee six and served as primary engineer while the organization grew through its acquisition by Hagerty to more than 20 team members.</li>
+				<li>Led migration of a 10+ year colocated stack to AWS; built high-concurrency registration, event-day operations, and analytics systems; reduced support burden by more than 80%.</li>
+			</ul>
+		</div>
+	</section>
+
+	<section>
+		<h2>Earlier Experience</h2>
+		<div class="earlier-role">
+			<strong>Mind Over Data</strong>
+			<span>Senior Software Engineer / Team Lead</span>
+			<span>2013 - 2015</span>
+		</div>
+		<div class="earlier-role">
+			<strong>Yusen Logistics</strong>
+			<span>Senior Programmer Analyst / Team Lead</span>
+			<span>2009 - 2013</span>
+		</div>
+		<div class="earlier-role">
+			<strong>ServiceMaster / TruGreen</strong>
+			<span>Lead Programmer Analyst</span>
+			<span>2005 - 2009</span>
+		</div>
+	</section>
+</article>
