@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <style>
+      :root { color-scheme: light; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #e7e3f6; color: #171d5b; font-family: "Avenir Next", Avenir, "Arial Rounded MT Bold", system-ui, sans-serif; }
+      .print-controls { position: fixed; z-index: 5; right: 18px; top: 18px; padding: 11px 14px; border: 0; border-radius: 12px; background: #7154ed; color: #fff; font: 800 14px inherit; box-shadow: 0 6px 15px #33277033; cursor: pointer; }
+      .flyer-sheet { display: grid; grid-template-columns: repeat(2, 1fr); gap: .12in; width: min(11in, calc(100vw - 24px)); min-height: 8.5in; margin: 12px auto; padding: .1in; background: #fff; }
+      .flyer { position: relative; min-width: 0; min-height: 8.05in; padding: .26in .26in .2in; overflow: hidden; border: 2px dashed #d6cffa; background: linear-gradient(155deg, #fff9e5 0%, #f9f4ff 48%, #dff5ff 100%); }
+      .flyer::before { content: ""; position: absolute; width: 3.4in; height: 1.7in; left: -.7in; top: 1.4in; border-radius: 50%; background: #ffe49b; opacity: .55; transform: rotate(17deg); }
+      .flyer::after { content: "✦   ·   ✦"; position: absolute; top: .14in; right: .2in; color: #f856ae; font-size: .26in; letter-spacing: .05in; }
+      .flyer-content { position: relative; z-index: 1; }
+      .flyer-brand { display: flex; align-items: center; gap: .12in; font-size: .19in; line-height: .95; font-weight: 900; letter-spacing: .005in; }
+      .flyer-brand img { width: .52in; height: .52in; border-radius: .15in; box-shadow: 0 .05in 0 #2a3470; }
+      .flyer-brand span span { color: #7650eb; }
+      .flyer h1 { width: 66%; margin: .3in 0 .12in; font-size: .48in; line-height: .91; letter-spacing: -.04in; }
+      .flyer h1 strong { color: #7154ed; }
+      .flyer .tagline { width: 62%; margin: 0; color: #656987; font-size: .16in; line-height: 1.35; font-weight: 700; }
+      .phone { position: absolute; right: .22in; top: 1.08in; width: 1.58in; padding: .05in; border: .08in solid #1c2669; border-radius: .27in; background: #1c2669; box-shadow: .15in .18in 0 #bddcf1; transform: rotate(7deg); }
+      .phone img { display: block; width: 100%; border-radius: .17in; }
+      .fact-chip { position: absolute; right: 1.44in; top: 2.45in; display: grid; place-items: center; width: .72in; height: .46in; border-radius: .16in; color: #f257b0; background: #fff; box-shadow: 0 .06in .1in #412a851c; font-size: .18in; font-weight: 900; transform: rotate(-10deg); }
+      .benefits { display: grid; grid-template-columns: repeat(2, 1fr); gap: .1in; margin: .33in 0 .25in; padding: 0; list-style: none; }
+      .benefits li { min-height: .55in; padding: .1in; border-radius: .15in; background: #fff; color: #5a5e80; font-size: .125in; line-height: 1.24; font-weight: 800; box-shadow: 0 .04in .1in #3521680d; }
+      .benefits b { display: block; margin-bottom: .025in; color: #1c2669; font-size: .14in; }
+      .flyer-bottom { display: grid; grid-template-columns: 1fr .91in; gap: .15in; align-items: center; padding-top: .16in; border-top: 2px solid #c7bafb; }
+      .flyer-bottom h2 { margin: 0 0 .045in; font-size: .2in; letter-spacing: -.01in; }
+      .flyer-bottom p { margin: 0; color: #626680; font-size: .12in; line-height: 1.3; font-weight: 700; }
+      .qr-placeholder { display: grid; place-items: center; width: .84in; height: .84in; border: .035in solid #171d5b; background: repeating-conic-gradient(#171d5b 0 25%, #fff 0 50%) 50% / .16in .16in; box-shadow: inset 0 0 0 .1in #fff; }
+      .qr-placeholder span { padding: .03in; color: #171d5b; background: #fff; font-size: .07in; font-weight: 900; text-align: center; }
+      .cut-label { position: absolute; left: 50%; bottom: .02in; color: #a8a1c1; font-size: .075in; letter-spacing: .02in; transform: translateX(-50%); }
+      @page { size: letter landscape; margin: .1in; }
+      @media print { body { background: #fff; } .print-controls { display: none; } .flyer-sheet { width: 10.8in; min-height: 8.3in; margin: 0; padding: 0; gap: .1in; } .flyer { min-height: 8.3in; border-color: #cabff5; } }
+      @media (max-width: 800px) { .flyer-sheet { grid-template-columns: 1fr; width: min(5.4in, calc(100vw - 24px)); } .flyer { min-height: 8.05in; } }
+    </style>
+  </head>
+  <body>
+    <button class="print-controls" type="button" onclick="window.print()">Print two flyers</button>
+    {{ content }}
+  </body>
+</html>
