@@ -30,6 +30,8 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://ryanguill.com" # the base hostname & protocol for your site
 cover: "/assets/blog-header-cuttlefish.jpg"
 logo: "/assets/cuttlefish-icon-edit.png"
+times_table_unleashed_app_store_url: "https://apps.apple.com/app/apple-store/id6794184709?pt=129215200&ct=website&mt=8"
+times_table_unleashed_flyer_app_store_url: "https://apps.apple.com/app/apple-store/id6794184709?pt=129215200&ct=flyer&mt=8"
 
 # Build settings
 markdown: kramdown

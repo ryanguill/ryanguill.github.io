@@ -21,11 +21,10 @@ main_nav: false
         <li><b>See progress</b>Use the Mastery Map and Teacher Report.</li>
       </ul>
       <div class="flyer-bottom">
-        <div><h2>Coming soon to the App Store</h2><p>For iPhone and iPad · No ads · No tracking · No accounts<br>Learn more: ryanguill.com/times-table-unleashed</p></div>
-        <div class="qr-placeholder" aria-label="QR code placeholder"><span>APP STORE<br>QR SOON</span></div>
+        <div><h2>Now on the App Store</h2><p>For iPhone and iPad · No ads · No tracking · No accounts<br>Scan to download or learn more: ryanguill.com/times-table-unleashed</p></div>
+        <a class="qr-code-link" href="{{ site.times_table_unleashed_flyer_app_store_url }}" rel="noopener"><img class="qr-code" src="/assets/times-table-unleashed/app-store-qr.svg" alt="Scan to download Times Table Unleashed from the App Store"></a>
       </div>
     </div>
-    <span class="cut-label">CUT HERE</span>
   </article>
   {% endfor %}
 </main>

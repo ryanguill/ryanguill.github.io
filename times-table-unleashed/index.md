@@ -18,10 +18,14 @@ main_nav: false
           <h1>Make multiplication <em>click.</em></h1>
           <p class="ttu-lede">Times Table Unleashed turns the facts that matter into short, joyful game rounds—so learners can build confidence one answer at a time.</p>
           <div class="ttu-actions">
-            <a class="ttu-button" href="#how-it-works">Explore the game</a>
-            <a class="ttu-button ttu-button-secondary" href="/times-table-unleashed/age-suitability/">For families &amp; teachers</a>
+            {% if site.times_table_unleashed_app_store_url != "" %}
+            <a class="ttu-button" href="{{ site.times_table_unleashed_app_store_url }}" rel="noopener">Get it on the App Store</a>
+            {% else %}
+            <span class="ttu-button ttu-button-coming-soon" aria-label="App Store release coming soon">App Store release coming soon</span>
+            {% endif %}
+            <a class="ttu-button ttu-button-secondary" href="#how-it-works">Explore the game</a>
           </div>
-          <p class="ttu-mini-note">Coming soon to the App Store for iPhone and iPad.</p>
+          <p class="ttu-mini-note">Now on the App Store for iPhone and iPad.</p>
         </div>
         <div class="ttu-stage" aria-hidden="true">
           <span class="ttu-fact ttu-fact-one">3 × 4</span>
@@ -82,7 +86,7 @@ main_nav: false
   </section>
 
   <section class="ttu-cta">
-    <div class="ttu-shell"><div class="ttu-cta-box"><h2>Ready, set, multiply!</h2><p>Times Table Unleashed is on its way to the App Store. In the meantime, explore support and age suitability details for families and teachers.</p><a class="ttu-button" href="/times-table-unleashed/support/">Get support</a></div></div>
+    <div class="ttu-shell"><div class="ttu-cta-box"><h2>Ready, set, multiply!</h2><p>Times Table Unleashed is now available on the App Store. Explore support and age suitability details for families and teachers.</p>{% if site.times_table_unleashed_app_store_url != "" %}<a class="ttu-button" href="{{ site.times_table_unleashed_app_store_url }}" rel="noopener">Get it on the App Store</a>{% else %}<span class="ttu-button ttu-button-coming-soon" aria-label="App Store release coming soon">App Store release coming soon</span>{% endif %}</div></div>
   </section>
   <footer class="ttu-footer"><div class="ttu-shell">Times Table Unleashed · A SockserBoxer app · <a href="/times-table-unleashed/privacy-policy/">Privacy</a></div></footer>
 </main>
