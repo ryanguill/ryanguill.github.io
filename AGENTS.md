@@ -176,20 +176,19 @@ If uncertain whether something is safe to publish, treat it as confidential and 
 
 ```bash
 eval "$(rbenv init -)"
-gem install bundler:2.5.13
-bundle _2.5.13_ install
+bundle install
 ```
 
 ### Preview (including drafts)
 
 ```bash
-bundle _2.5.13_ exec jekyll serve --drafts --host 127.0.0.1 --port 4001
+bundle exec jekyll serve --drafts --host 127.0.0.1 --port 4001
 ```
 
 ### Production build check
 
 ```bash
-bundle _2.5.13_ exec jekyll build
+bundle exec jekyll build
 ```
 
 Run build checks before publishing content changes.
@@ -198,8 +197,8 @@ Run build checks before publishing content changes.
 
 For post/content changes, run this sequence before publishing:
 
-1. `bundle _2.5.13_ exec jekyll build`
-2. `bundle _2.5.13_ exec jekyll serve --drafts --host 127.0.0.1 --port 4001`
+1. `bundle exec jekyll build`
+2. `bundle exec jekyll serve --drafts --host 127.0.0.1 --port 4001`
 3. Review the affected page(s) in local preview (`http://127.0.0.1:4001`).
 4. Run content QA checks:
    - Verify formatting, code blocks, links, and front matter render as expected.
