@@ -10,26 +10,29 @@ permalink: /resume/
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ryan Guill Resume</title>
-	<!-- <link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />-->
-	<!--<link rel="stylesheet" href="/css/stackedit-base.css" />-->
 	<style>
 		blockquote {
-			border-left: 5px solid black;
+			border-left: 2px solid var(--glint, black);
 			margin-left: 15px;
 			padding-left: 10px;
 		}
 		.resume-page-switcher {
 			position: fixed;
-			top: 4.75rem;
-			right: 1rem;
+			top: 96px;
+			right: 24px;
 			z-index: 10;
-			padding: 0.45rem 0.7rem;
-			border: 1px solid #b8c2cc;
-			border-radius: 4px;
-			background: white;
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-			font-size: 0.9rem;
-			font-weight: 600;
+			padding: 8px 14px;
+			border: 1px solid var(--rule, #24221e);
+			background: var(--bg-raised, #121210);
+			color: var(--ink-soft, #b7b0a2);
+			font-family: var(--mono, monospace);
+			font-size: 12.5px;
+			text-decoration: none;
+			transition: color .15s, border-color .15s;
+		}
+		.resume-page-switcher:hover {
+			color: var(--tan, #cfae74);
+			border-color: var(--tan, #cfae74);
 		}
 		@media print {
 			.resume-page-switcher {

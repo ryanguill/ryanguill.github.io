@@ -1,106 +1,43 @@
 ---
 layout: default
+overlay_nav: true
 ---
+{% assign visible_posts = site.posts | where_exp: "post", "post.unlisted != true" %}
+{% assign latest = visible_posts.first %}
 <div class="home">
 
-<div class="site-header-container {% if site.cover %}has-cover{% endif %}" {% if site.cover %}style="background-image: url({{ site.cover | prepend: site.baseurl }});"{% endif %}>
-  <div class="scrim {% if site.cover %}has-cover{% endif %}">
-    <header class="site-header">
-      <h1 class="title">{{ site.title }}</h1>
-      {% if site.subtitle %}<p class="subtitle">{{ site.subtitle }}</p>{% endif %}
-    </header>
+<div class="hero">
+  {% if site.cover %}<div class="hero-photo" style="background-image: url({{ site.cover | prepend: site.baseurl }});"></div>{% endif %}
+  <div class="wrapper">
+    <h1>Thoughts, learnings <em>&amp;&nbsp;discoveries.</em></h1>
   </div>
 </div>
 
-<div class="wrapper">
-<ul class="post-list">
-  {% assign visible_posts = paginator.posts | where_exp: "post", "post.unlisted != true" %}
-  {% for post in visible_posts %}
-  <li>
-    <h2>
-      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </h2>
-    <section class="post-excerpt" itemprop="description">
-      <p>{{ post.excerpt }}</p>
-      {% capture content_words %}
-        {{ post.content | number_of_words }}
-      {% endcapture %}
-      {% capture excerpt_words %}
-        {{ post.excerpt | number_of_words }}
-      {% endcapture %}
-      {% if excerpt_words != content_words %}
-      <p>
-        <a class="btn btn-sm btn-primary" href="{{ post.url }}#read-more" role="button">Read more <i class="fa fa-arrow-circle-right"></i></a>
-      </p>
-      {% endif %}
-
-      <a href="{{ post.url }}#disqus_thread">comments</a>
-    </section>
-    <section class="post-meta">
-      <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
-<!--
-      <div class="post-categories">
-      {% if post.categories.size > 0 %}in {% for cat in post.categories %}
-        {% if site.jekyll-archives %}
-        <a href="{{ site.baseurl }}/category/{{ cat }}">{{ cat }}</a>{% if forloop.last == false %}, {% endif %}
-        {% else %}
-        <span>{{ cat }}</span>{% if forloop.last == false %}, {% endif %}
-        {% endif %}
-      {% endfor %}{% endif %}
+<section class="band">
+  <div class="wrapper">
+    <p class="label">Latest</p>
+    <div class="latest">
+      <div>
+        <h2><a href="{{ latest.url | prepend: site.baseurl }}">{{ latest.title }}</a></h2>
+        <p>{{ latest.description | default: latest.excerpt | strip_html | strip_newlines | truncatewords: 60 }}</p>
+        <a class="more" href="{{ latest.url | prepend: site.baseurl }}">Keep reading &rarr;</a>
       </div>
--->      
-    </section>
-  </li>
-  {% if forloop.last == false %}
-  <hr>
-  {% endif %}
-  {% endfor %}
-</ul>
+      <div class="meta">
+        <b>{{ latest.date | date: "%B %-d, %Y" }}</b>
+        {% assign words = latest.content | number_of_words %}{{ words | divided_by: 230 | plus: 1 }} min read<br>
+        {% for cat in latest.categories %}<a href="{{ site.baseurl }}/category/{{ cat | slugify }}/">{{ cat }}</a>{% unless forloop.last %} &middot; {% endunless %}{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
 
-<nav class="pagination" role="navigation">
-  <p>
-    {% if paginator.next_page %}
-    <a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.next_page}}">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square fa-stack-2x"></i>
-        <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-    {% else %}
-    <span class="fa-stack fa-lg">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-    </span>
-    {% endif %}
-    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.previous_page %}
-      {% if paginator.page == 2 %}
-      <a class="newer-posts" href="{% if site.baseurl %}{{ site.baseurl }}{% endif %}/">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-square fa-stack-2x"></i>
-          <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-      {% else %}
-      <a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.previous_page}}">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-square fa-stack-2x"></i>
-          <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-      {% endif %}
-    {% else %}
-    <span class="fa-stack fa-lg">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
-    </span>
-    {% endif %}
-  </p>
-  <p>
-    <a href="{{ site.baseurl }}/posts">View All Posts by Category</a>
-  </p>
-</nav>
+<section class="band">
+  <div class="wrapper">
+    <p class="label">Writing</p>
+    {% assign recent = visible_posts | slice: 1, 10 %}
+    {% include post-index.html posts=recent %}
+    <a class="more all" href="{{ "/posts/" | prepend: site.baseurl }}">All {{ visible_posts.size }} posts &rarr;</a>
+  </div>
+</section>
 
 </div>
-</div>
-<script id="dsq-count-scr" src="//ryanguill.disqus.com/count.js" async></script>

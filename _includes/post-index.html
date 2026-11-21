@@ -1,0 +1,20 @@
+{% comment %}
+  Year-grouped list of posts.
+  Params: posts (array, already filtered/sliced), topics (bool, show categories)
+{% endcomment %}
+{% assign by_year = include.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+<div class="post-index">
+{% for year in by_year %}
+  <div class="year">
+    <h3>{{ year.name }}</h3>
+    <ol>
+    {% for post in year.items %}
+      <li><a href="{{ post.url | prepend: site.baseurl }}">
+        <span class="t">{{ post.title }}</span>
+        <span class="d">{% if include.topics and post.categories.size > 0 %}<span class="topics">{{ post.categories | join: " · " }}</span>{% endif %}{{ post.date | date: "%b %d" }}</span>
+      </a></li>
+    {% endfor %}
+    </ol>
+  </div>
+{% endfor %}
+</div>

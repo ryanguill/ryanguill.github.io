@@ -20,4 +20,4 @@ for (var i = 0, n = allElements.length; i < n; ++i) {
 if (dupIDs.length) { console.error("Duplicate ID's:", dupIDs);} else { console.log("No Duplicates Detected"); }
 {% endhighlight %}
 
-Math Busche covered the same topic last year, [head over there](http://matthewbusche.com/blog2/2015/04/13/checking-an-html-page-for-duplicate-ids-using-javascript/) to see how he tackled the same thing.
+Math Busche covered the same topic last year, [head over there](https://matthewbusche.com/2015/04/13/checking-an-html-page-for-duplicate-ids-using-javascript/) to see how he tackled the same thing.

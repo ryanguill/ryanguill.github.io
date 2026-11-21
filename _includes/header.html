@@ -1,22 +1,15 @@
-<header class="navigation" role="banner">
-  <div class="navigation-wrapper">
-    <a href="{{ site.baseurl }}/" class="logo">
-      {% if site.logo %}
-      <img src="{{ site.logo | prepend: site.baseurl }}" alt="{{ site.title }}">
-      {% else %}
-      <span>{{ site.title }}</span>
-      {% endif %}
+<header class="navigation{% if include.overlay %} is-overlay{% endif %}" role="banner">
+  <div class="wrapper navigation-wrapper">
+    <a href="{{ site.baseurl }}/" class="brand">
+      {% if site.logo %}<img src="{{ site.logo | prepend: site.baseurl }}" alt="">{% endif %}
+      <span>{{ site.name }}</span>
     </a>
-    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <nav role="navigation">
-      <ul id="js-navigation-menu" class="navigation-menu show">
-        {% for page in site.pages %}
-          {% if page.title and page.main_nav != false %}
-          <li class="nav-link"><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-          {% endif %}
-        {% endfor %}
+    <nav role="navigation" aria-label="Main">
+      <ul class="navigation-menu">
+        <li><a href="{{ "/posts/" | prepend: site.baseurl }}"{% if page.url == "/posts/" %} aria-current="page"{% endif %}>writing</a></li>
+        <li><a href="{{ "/about/" | prepend: site.baseurl }}"{% if page.url == "/about/" %} aria-current="page"{% endif %}>about</a></li>
+        <li><a href="{{ "/resume/" | prepend: site.baseurl }}"{% if page.url contains "/resume/" %} aria-current="page"{% endif %}>résumé</a></li>
+        <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}">rss</a></li>
       </ul>
     </nav>
   </div>

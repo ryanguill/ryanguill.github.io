@@ -96,4 +96,4 @@ You may also want to provide the ability to cancel a request. Not all requests c
 
 The client could provide a key to sign the response and keep other clients from being able to read it, even if it was provided over a broadcast channel. This still has the same wasted-bandwidth problem for all but the smallest payloads though - and the encryption might make that problem worse.
 
-We didn't come across this post until well after we were under-way but it has some very similar thoughts and expands in some different ways: [https://farazdagi.com/2014/rest-and-long-running-jobs/](https://farazdagi.com/2014/rest-and-long-running-jobs/)
+We didn't come across this post until well after we were under-way but it has some very similar thoughts and expands in some different ways: [https://farazdagi.com/2014/rest-and-long-running-jobs/](https://web.archive.org/web/20200511220257/https://farazdagi.com/2014/rest-and-long-running-jobs/) (archived copy; the original site is offline)

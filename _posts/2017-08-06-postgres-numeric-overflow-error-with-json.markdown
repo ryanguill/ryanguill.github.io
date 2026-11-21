@@ -18,4 +18,4 @@ select '{"v": 300e715100}'::json;
 -- this statement executes without error.
 {% endhighlight %}
 
-You can try the code and see the error for yourself here: [http://dbfiddle.uk/?rdbms=postgres_9.6&fiddle=1584330f148ab0e9ed72529dfb466a12](http://dbfiddle.uk/?rdbms=postgres_9.6&fiddle=1584330f148ab0e9ed72529dfb466a12)
+You can try the code and see the error for yourself here: [https://dbfiddle.uk/AVohecpm](https://dbfiddle.uk/AVohecpm)

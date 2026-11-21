@@ -61,8 +61,8 @@ Primary assistant responsibilities are:
 - `resume.html`
   Resume page content. Treat resume updates as separate from blog post work unless explicitly requested.
 
-- `css/` + `_sass/`
-  Stylesheet entrypoint and Sass partials.
+- `css/main.css`
+  The site stylesheet: plain CSS with custom properties (no Sass). Theme colors and fonts are variables at the top.
 
 - `_site/`
   Generated output. **Never edit manually.**
@@ -96,7 +96,6 @@ Each post should include:
 ### Front matter (optional)
 
 - `cover: "/assets/example-image.png"`
-- `disqus_disabled: true` (if comments should be off)
 
 ### Content conventions
 

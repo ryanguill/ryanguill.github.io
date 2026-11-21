@@ -1,15 +1,13 @@
 # External plugins
 plugins:
-  #- jekyll-archives # Sorry, not GitHub pages friendly!
+  - jekyll-archives # works because Pages builds via GitHub Actions, not the github-pages gem
   - jekyll-sitemap
-  - jekyll-paginate
 
 exclude:
   - "/vendor/"
   - "AGENTS.md"
   - "README.md"
   - "LICENSE.md"
-  - "circle.yml"
   - ".plans/"
   - ".github/"
   - "Gemfile"
@@ -35,10 +33,7 @@ times_table_unleashed_flyer_app_store_url: "https://apps.apple.com/app/apple-sto
 
 # Build settings
 markdown: kramdown
-paginate: 5
-paginate_path: "/page:num/"
-inter_post_navigation: false
-highlightjs_theme: "monokai_sublime"
+inter_post_navigation: true
 excerpt_separator: <!-- break -->
 
 # Archive settings (see https://github.com/jekyll/jekyll-archives/)
@@ -51,19 +46,9 @@ jekyll-archives:
     category: '/category/:name/'
     tag: '/tag/:name/'
 
-# Disqus comments
-disqus_shortname: ryanguill
-
-# Google analytics
-ga_tracking_id: "UA-73299-11"
-
-# Category descriptions (for archive pages)
-descriptions:
-  - cat: jekyll
-    desc: "Posts describing Jekyll setup techniques."
-
-  - cat: dummy
-    desc: "Just some placeholder posts, lorem ipsum and the rest."
+# Google Analytics 4 measurement ID (looks like "G-XXXXXXXXXX").
+# Only loaded in production builds (JEKYLL_ENV=production). Leave empty to disable.
+google_analytics_id: "G-4F03N3ZJZD"
 
 # Social icons and sharing options
 #
